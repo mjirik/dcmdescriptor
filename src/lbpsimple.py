@@ -91,6 +91,9 @@ def lbp2(dat):
 
     return outdat
         
+def features(imlbp):
+    return numpy.histogram( imlbp,range(0,255))
+    
 
 def smooth(x,beta):
     """ kaiser window smoothing """
@@ -103,20 +106,57 @@ def smooth(x,beta):
     return y[5:len(y)-5]
 
 if __name__ == "__main__":
-    dat = numpy.random.random(100)*255
-    dat = dat.astype(numpy.int)
-    dat = dat.reshape(10,10,1)
-    print dat
-    print lbp2(dat)
+    from scipy import misc
+    import matplotlib.pyplot as plt
+    
+    # lena image
+    dat = misc.lena()
+    # random image
+    #dat = numpy.random.random(100)*255
+    #dat = dat.astype(numpy.int)
+    #dat = dat.reshape(10,10,1)
+    #print dat
+    #print lbp2(dat)
 
     lbpkern = generateKernel2()
-    print len(lbpkern)
+    #print len(lbpkern)
     
-    dataout = lbp2oneslice(dat[:,:,0], lbpkern)
-    print dat[:,:,0]
-    print dataout
+    imlbp = lbp2oneslice(dat[:,:], lbpkern)
+    print dat[:,:]
+    print imlbp
+
+    feat=features(imlbp)
     
     
+    #print 'lena' , dat
+    
+    
+    #import matplotlib.image as mpimg
+    #import numpy as np
+    plt.figure()
+    #plt.imshow(l)
+    plt.imshow(dat, cmap=plt.cm.gray)
+    plt.show()
+    plt.close()
+    
+    
+    plt.figure()
+    #plt.imshow(l)
+    plt.imshow(imlbp, cmap=plt.cm.gray)
+    plt.show()
+    plt.close()
+    
+    pylab.figure()
+    pylab.plot(feat[0],label="LBP Code")
+    pylab.legend()
+    pylab.show()
+    #
+    
+    #misc.imsave('lena.png', l) # uses the Image module (PIL)
+    
+    #import pylab as pl
+    #pl.imshow(l)
+    print 'Konec'
 
 ##    beta = [2, 4, 16, 32]
 ##
