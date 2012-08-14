@@ -38,8 +38,6 @@ def filesindir(dirpath, wildcard):
     return filelist
 
 
-def featurevect(data, method = 1):
-    return 1
 
 def traindata(fileslist):
     import dicom

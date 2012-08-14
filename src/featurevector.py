@@ -22,18 +22,25 @@ dec.shape[1]
 
 
 
-def fvector(data):
+def fvector(data, method = 'lbp'):
+    """ Method for building feature vector """
 
-    from scipy import misc
-    import matplotlib.pyplot as plt
-    import lbpsimple
-    
+    fv = 0
+    if method == 'lbp':
+        from scipy import misc
+        import matplotlib.pyplot as plt
+        import lbpsimple
+        
 
-    lbpkern = lbpsimple.generateKernel2()
-    
-    imlbp = lbpsimple.lbp2oneslice(data, lbpkern)
+        lbpkern = lbpsimple.generateKernel2()
+        
+        imlbp = lbpsimple.lbp2oneslice(data, lbpkern)
 
-    feat = lbpsimple.features(imlbp)
+        fv = lbpsimple.features(imlbp)
 
-    pdb.set_trace();
-    return 1
+        #pdb.set_trace();
+    else:
+        print 'Unknow method for feature vetor: ', method
+        return -1
+
+    return fv
