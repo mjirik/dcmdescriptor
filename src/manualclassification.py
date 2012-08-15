@@ -114,6 +114,51 @@ def classifDialog():
     rootwin.mainloop()
     items = map(int, listbox.curselection())
 
+
+
+class Dialogmenu:
+    import sys
+    import Tkinter
+    retval = 0
+    rootwin = Tkinter.Tk()
+
+    bodyparts = ['foot','calf', 'knee', 'thigh','colon', \
+            'kidneys','liver','heart', 'brain',]
+    def __init__(self ):
+    #def start():
+        #rootwin = Tkinter.Tk()
+        #menuindexes =range(len(menuitemlist)) 
+        Tkinter.Button(text=self.bodyparts[0], command=lambda:
+                self.callback(self.bodyparts[0],0)).pack()
+        Tkinter.Button(text=self.bodyparts[1], command=lambda:
+                self.callback(self.bodyparts[1],1)).pack()
+        Tkinter.Button(text=self.bodyparts[2], command=lambda:
+                self.callback(self.bodyparts[2],2)).pack()
+        Tkinter.Button(text=self.bodyparts[3], command=lambda:
+                self.callback(self.bodyparts[3],3)).pack()
+        Tkinter.Button(text=self.bodyparts[4], command=lambda:
+                self.callback(self.bodyparts[4],4)).pack()
+        Tkinter.Button(text=self.bodyparts[5], command=lambda:
+                self.callback(self.bodyparts[5],5)).pack()
+        Tkinter.Button(text=self.bodyparts[6], command=lambda:
+                self.callback(self.bodyparts[6],6)).pack()
+        Tkinter.Button(text=self.bodyparts[7], command=lambda:
+                self.callback(self.bodyparts[7],7)).pack()
+        Tkinter.Button(text=self.bodyparts[8], command=lambda:
+                self.callback(self.bodyparts[8],8)).pack()
+
+
+
+        Tkinter.mainloop()
+
+    def callback(self, name, idx):
+        print "clicked!", name, ' i ', idx
+        # win = Tkinter.Toplevel()                                     
+        self.rootwin.destroy()
+        self.retval = name
+
+
+
 def dlgselectclose(rootwin, select):
     #if makemodal:
     #    win.focus_set()       
@@ -126,18 +171,27 @@ def dlgselectclose(rootwin, select):
     # return select
     global vyber 
     vyber = select
-    rootwin.destroy
+    rootwin.destroy()
 
 def dialogmenu(menuitemlist):
     import sys
     import Tkinter
 
     rootwin = Tkinter.Tk()
+    menuindexes =range(len(menuitemlist)) 
 
-    for menuitemindex in range(len(menuitemlist)):
-        mnidx = menuitemindex
-        Tkinter.Button(rootwin, text=menuitemlist[menuitemindex],command=lambda:dlgselectclose(rootwin,menuitemlist[mnidx])).pack()
-        print 'mnitemidx ', menuitemindex
+    #for menuitemindex in menuindexes:
+    #    mnidx = menuitemindex
+    #    print 'mnitemidx ', menuitemindex
+    #    Tkinter.Button(rootwin, text=menuitemlist[menuitemindex], \
+    #            command=lambda: dlgselectclose(rootwin,menuindexes[mnidx])).pack() 
+    #
+    #    Tkinter.Button(rootwin, text=menuitemlist[menuitemindex],command=lambda:
+    #            dlgselectclose(rootwin,8)).pack()
+    Tkinter.Button(rootwin, text=menuitemlist[menuitemindex], \
+            command=lambda: dlgselectclose(rootwin,menuindexes[mnidx])).pack() 
+
+
 
     rootwin.mainloop()
     print 'a po ',vyber
@@ -149,24 +203,29 @@ if __name__ == "__main__":
     import Tkinter
     import training
     print 'ahoj'
+    dm = Dialogmenu()
+    print dm.retval
+
+
+
     # classifDialog()
-    dialogmenu(['Ahoj', 'Nehoj', 'Neboj'])
+#    dialogmenu(['Ahoj', 'Nehoj', 'Neboj'])
 
-    makemodal = (len(sys.argv) > 1)
-
-    rootwin = Tkinter.Tk()
-    #Tkinter.Button(root, text='popup', command=dialog).pack() 
-    print makemodal
-    var = Tkinter.IntVar(rootwin, value=0)
-    Tkinter.Button(rootwin, text='popup22', command=lambda
-            :dlgselectclose(rootwin,6)).pack() 
-    Tkinter.Button(rootwin, text='popup', command=rootwin.destroy).pack() 
-    if makemodal:
-        rootwin.focus_set()       
-        rootwin.grab_set()           
-        rootwin.wait_window()       
-    print 'a pred ', vyber
-    #oneimage()
-    #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
-    #traindata(filelist)
-
+#    makemodal = (len(sys.argv) > 1)
+#
+#    rootwin = Tkinter.Tk()
+#    #Tkinter.Button(root, text='popup', command=dialog).pack() 
+#    print makemodal
+#    var = Tkinter.IntVar(rootwin, value=0)
+#    Tkinter.Button(rootwin, text='popup22', command=lambda
+#            :dlgselectclose(rootwin,6)).pack() 
+#    Tkinter.Button(rootwin, text='popup', command=rootwin.destroy).pack() 
+#    if makemodal:
+#        rootwin.focus_set()       
+#        rootwin.grab_set()           
+#        rootwin.wait_window()       
+#    print 'a pred ', vyber
+#    #oneimage()
+#    #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
+#    #traindata(filelist)
+#
