@@ -120,39 +120,48 @@ class Dialogmenu:
     import sys
     import Tkinter
     retval = 0
-    rootwin = Tkinter.Tk()
+    rootwin = None
+    win = None
 
-    bodyparts = ['foot','calf', 'knee', 'thigh','colon', \
-            'kidneys','liver','heart', 'brain',]
+    bodyparts = ['foot', 'calf', 'knee', 'thigh','hip','colon', \
+            'kidneys', 'liver', 'heart', 'lungs', 'neck', \
+            'face', 'brain',]
     def __init__(self ):
-    #def start():
-        #rootwin = Tkinter.Tk()
+        self.rootwin = Tkinter.Tk()
+        #self.win = Tkinter.Toplevel()                                     
+        #def start():
         #menuindexes =range(len(menuitemlist)) 
-        Tkinter.Button(text=self.bodyparts[0], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[0], command=lambda:
                 self.callback(self.bodyparts[0],0)).pack()
-        Tkinter.Button(text=self.bodyparts[1], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[1], command=lambda:
                 self.callback(self.bodyparts[1],1)).pack()
-        Tkinter.Button(text=self.bodyparts[2], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[2], command=lambda:
                 self.callback(self.bodyparts[2],2)).pack()
-        Tkinter.Button(text=self.bodyparts[3], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[3], command=lambda:
                 self.callback(self.bodyparts[3],3)).pack()
-        Tkinter.Button(text=self.bodyparts[4], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[4], command=lambda:
                 self.callback(self.bodyparts[4],4)).pack()
-        Tkinter.Button(text=self.bodyparts[5], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[5], command=lambda:
                 self.callback(self.bodyparts[5],5)).pack()
-        Tkinter.Button(text=self.bodyparts[6], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[6], command=lambda:
                 self.callback(self.bodyparts[6],6)).pack()
-        Tkinter.Button(text=self.bodyparts[7], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[7], command=lambda:
                 self.callback(self.bodyparts[7],7)).pack()
-        Tkinter.Button(text=self.bodyparts[8], command=lambda:
+        Tkinter.Button(self.rootwin, text=self.bodyparts[8], command=lambda:
                 self.callback(self.bodyparts[8],8)).pack()
+        Tkinter.Button(self.rootwin, text=self.bodyparts[9], command=lambda:
+                self.callback(self.bodyparts[9],9)).pack()
+        Tkinter.Button(self.rootwin, text=self.bodyparts[10], command=lambda:
+                self.callback(self.bodyparts[10],10)).pack()
+        Tkinter.Button(self.rootwin, text=self.bodyparts[11], command=lambda:
+                self.callback(self.bodyparts[11],11)).pack()
 
 
 
         Tkinter.mainloop()
 
     def callback(self, name, idx):
-        print "clicked!", name, ' i ', idx
+        #print "clicked!", name, ' i ', idx
         # win = Tkinter.Toplevel()                                     
         self.rootwin.destroy()
         self.retval = name
@@ -196,6 +205,69 @@ def dialogmenu(menuitemlist):
     rootwin.mainloop()
     print 'a po ',vyber
 
+#class values:
+#    val = 0
+#    bodyparts = ['foot', 'calf', 'knee', 'thigh','hip','colon', \
+#            'kidneys', 'liver', 'heart', 'lungs', 'neck', \
+#            'face', 'brain']
+
+
+
+def anotation_to_file(anotation, filename = 'anotation.json'):
+    import json
+    with open(filename, mode='w', encoding='utf-8') as f:
+        json.dump(anotation,f)
+
+
+def manual_anotation(filelist):
+    ''' Manual slice classification from file list.
+
+    filelist = ['/home/mjirik/data/img1.dcm', './img2.png']
+
+    manual_anotation(filelist)
+    '''
+    import dicom
+    from matplotlib.widgets import Button
+
+    anotation = []
+
+    print 'pocet souboru: ', len(filelist)
+
+    for filepath in filelist:
+
+
+        dcmdata=dicom.read_file(filepath)
+        print 'Modality: ', dcmdata.Modality
+        print 'PatientsName: ' , dcmdata.PatientsName
+        print 'BodyPartExamined: ', dcmdata.BodyPartExamined
+        print 'SliceThickness: ', dcmdata.SliceThickness
+        print 'PixelSpacing: ', dcmdata.PixelSpacing
+        # get data
+        data = dcmdata.pixel_array
+        #print data
+        #featurevector.fvector(data)
+
+        import matplotlib.pyplot as plt
+
+        plt.figure()
+
+
+        plt.imshow(data, cmap=plt.cm.gray)
+        # Button(
+        
+        plt.show()
+        plt.close()
+        print 'close()'
+
+        # User selects classification
+        dm = Dialogmenu()
+        print dm.retval
+
+        anotation.append({'filepath':filepath, 'slicedescription': dm.retval})
+
+    anotation_to_file(anotation)
+
+
 
 
 if __name__ == "__main__":
@@ -203,10 +275,13 @@ if __name__ == "__main__":
     import Tkinter
     import training
     print 'ahoj'
-    dm = Dialogmenu()
-    print dm.retval
+    #dm = Dialogmenu()
+    #print dm.retval
 
 
+    filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
+    manual_anotation(filelist)
+    #traindata(filelist)
 
     # classifDialog()
 #    dialogmenu(['Ahoj', 'Nehoj', 'Neboj'])
@@ -226,6 +301,4 @@ if __name__ == "__main__":
 #        rootwin.wait_window()       
 #    print 'a pred ', vyber
 #    #oneimage()
-#    #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
-#    #traindata(filelist)
 #
