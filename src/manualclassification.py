@@ -215,8 +215,122 @@ def dialogmenu(menuitemlist):
 
 def anotation_to_file(anotation, filename = 'anotation.json'):
     import json
-    with open(filename, mode='w', encoding='utf-8') as f:
+    with open(filename, mode='w') as f:
         json.dump(anotation,f)
+
+#def buttons_in_matplotlib():
+class ButtonsInMatplotlib:
+    from matplotlib.widgets import Button
+    import matplotlib.pyplot as plt
+    bodyparts = ['foot', 'calf', 'knee', 'thigh','pelvis','colon', \
+            'kidneys', 'liver', 'heart', 'lungs', 'neck', \
+            'face', 'brain']
+    retvalue=0
+    backrequest = 0
+    exitrequest = 0
+    
+    def __init__(self, data ):
+        from matplotlib.widgets import Button
+        import matplotlib.pyplot as plt
+        plt.figure()
+
+
+        plt.imshow(data, cmap=plt.cm.gray)
+        plt.subplots_adjust(right=0.75)
+        baxes = []
+        buttons = []
+        callbacks = []
+        #l1 = lambda: self.callback(0)
+
+        btback = Button(plt.axes ([0.01, 0.01, 0.1, 0.1]), 'back')
+        btback.on_clicked(self.backcallback)
+        btexit= Button(plt.axes ([0.01, 0.12, 0.1, 0.1]), 'exit')
+        btexit.on_clicked(self.exitcallback)
+
+        for i in range(0,len(self.bodyparts)):
+            baxes.append(plt.axes([0.8, 0.06+0.06*i, 0.07, 0.05]))
+            buttons.append(Button(baxes[i],self.bodyparts[i]))
+            #callbacks.append(self.callback0)
+            #buttons[i].on_clicked(callbacks[i])
+        
+        buttons[0].on_clicked(self.callback0)
+        buttons[1].on_clicked(self.callback1)
+        buttons[2].on_clicked(self.callback2)
+        buttons[3].on_clicked(self.callback3)
+        buttons[4].on_clicked(self.callback4)
+        buttons[5].on_clicked(self.callback5)
+        buttons[6].on_clicked(self.callback6)
+        buttons[7].on_clicked(self.callback7)
+        buttons[8].on_clicked(self.callback8)
+        buttons[9].on_clicked(self.callback9)
+        buttons[10].on_clicked(self.callback10)
+        buttons[11].on_clicked(self.callback11)
+        buttons[12].on_clicked(self.callback12)
+        #btn0 = Button(baxes[0],self.bodyparts[0])
+        #btn1 = Button(baxes[1],self.bodyparts[1])
+        #btn2 = Button(baxes[2],self.bodyparts[2])
+        #btn3 = Button(baxes[3],self.bodyparts[3])
+        #btn4 = Button(baxes[4],self.bodyparts[4])
+        #btn5 = Button(baxes[5],self.bodyparts[5])
+        #btn6 = Button(baxes[6],self.bodyparts[6])
+        #btn.on_clicked(self.callback0)
+        #for i in range(0,len(self.bodyparts)):
+
+        #bnext.on_clicked(lambda:self.callback(0))
+        #Button(baxes[0],'hoj')
+        #Button(baxes[1],self.bodyparts[1])
+
+        plt.show()
+
+    def stdcallback(self, ind):
+        import matplotlib.pyplot as plt
+        plt.close()
+        self.retvalue = self.bodyparts[ind]
+
+    def callback0(self, evnt ):
+        #self.retvalue = self.bodyparts[0]
+        self.stdcallback(0)
+    def callback1(self, evnt ):
+        self.stdcallback(1)
+    def callback2(self, evnt ):
+        self.stdcallback(2)
+    def callback3(self, evnt ):
+        self.stdcallback(3)
+    def callback4(self, evnt ):
+        self.stdcallback(4)
+    def callback5(self, evnt ):
+        self.stdcallback(5)
+    def callback6(self, evnt ):
+        self.stdcallback(6)
+    def callback7(self, evnt ):
+        self.stdcallback(7)
+    def callback8(self, evnt ):
+        self.stdcallback(8)
+    def callback9(self, evnt ):
+        self.stdcallback(9)
+    def callback10(self, evnt ):
+        self.stdcallback(10)
+    def callback11(self, evnt ):
+        self.stdcallback(11)
+    def callback12(self, evnt ):
+        self.stdcallback(12)
+
+
+
+
+
+    def backcallback(self, evnt):
+        #self.retvalue = self.bodyparts[ind]
+        print 'clicked ', evnt
+        self.backrequest = 1
+        import matplotlib.pyplot as plt
+        plt.close()
+    def exitcallback(self, evnt):
+        #self.retvalue = self.bodyparts[ind]
+        self.exitrequest = 1
+        import matplotlib.pyplot as plt
+        plt.close()
+
 
 
 def manual_anotation(filelist):
@@ -229,11 +343,17 @@ def manual_anotation(filelist):
     import dicom
     from matplotlib.widgets import Button
 
-    anotation = []
+    anotation = {}
 
     print 'pocet souboru: ', len(filelist)
 
-    for filepath in filelist:
+    # test jen na prvnim obrazku
+    #filelist = [filelist[0]]
+    fileind = 0
+    while fileind <= len(filelist):
+        filepath = filelist[fileind]
+
+    #for filepath in filelist:
 
 
         dcmdata=dicom.read_file(filepath)
@@ -249,21 +369,31 @@ def manual_anotation(filelist):
 
         import matplotlib.pyplot as plt
 
-        plt.figure()
-
-
-        plt.imshow(data, cmap=plt.cm.gray)
         # Button(
         
-        plt.show()
-        plt.close()
-        print 'close()'
+        dm = ButtonsInMatplotlib(data)
+        
+        #plt.show()
+        #axnext = plt.axes([0.81, 0.05, 0.1, 0.075])
+        #bnext = Button(axnext, 'Next')
+        #bnext.on_clicked(callback.next)
+        #plt.close()
+        print 'finished (',fileind, '/', len(filelist), ') ' , dm.retvalue
 
         # User selects classification
-        dm = Dialogmenu()
-        print dm.retval
+        #dm = Dialogmenu()
+        #print dm.retval
 
-        anotation.append({'filepath':filepath, 'slicedescription': dm.retval})
+
+
+        if dm.backrequest == 1:
+            fileind = fileind -1
+        elif dm.exitrequest == 1:
+            fileind = len(filelist) + 1
+        else:
+            fileind = fileind + 1
+            anotation[filepath] = {'filepath':filepath, 'slicedescription': dm.retvalue}
+
 
     anotation_to_file(anotation)
 
@@ -278,8 +408,8 @@ if __name__ == "__main__":
     #dm = Dialogmenu()
     #print dm.retval
 
-
-    filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
+    #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
+    filelist = training.filesindir('/home/mjirik/data/jatra_06mm_jenjatra','*.*')
     manual_anotation(filelist)
     #traindata(filelist)
 
