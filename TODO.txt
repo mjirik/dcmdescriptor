@@ -1,0 +1,19 @@
+= Todo
+* autodoc
+* traindata downloading
+* install
+* data dir?
+* features dir?
+* annotations dir?
+
+
+= Features
+* LBP
+* histogram of oriented gradients
+* Histogram
+* Gabor filters
+* Wavelets
+* 1st order statistics
+* 2nd order statistics
+* Coocurence matrix
+

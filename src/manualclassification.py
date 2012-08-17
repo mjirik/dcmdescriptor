@@ -213,10 +213,19 @@ def dialogmenu(menuitemlist):
 
 
 
-def anotation_to_file(anotation, filename = 'anotation.json'):
+def annotation_to_file(annotation, filename = 'annotation.json'):
     import json
+    import yaml
     with open(filename, mode='w') as f:
-        json.dump(anotation,f)
+        json.dump(annotation,f)
+
+    # write to yaml
+
+    f = open('annotation.yaml', 'w')
+    yaml.dump(annotation,f)
+    f.close
+
+
 
 #def buttons_in_matplotlib():
 class ButtonsInMatplotlib:
@@ -236,19 +245,19 @@ class ButtonsInMatplotlib:
 
 
         plt.imshow(data, cmap=plt.cm.gray)
-        plt.subplots_adjust(right=0.75)
+        plt.subplots_adjust(right=0.85,left=0.18)
         baxes = []
         buttons = []
         callbacks = []
         #l1 = lambda: self.callback(0)
 
-        btback = Button(plt.axes ([0.01, 0.01, 0.1, 0.1]), 'back')
+        btback = Button(plt.axes ([0.02, 0.05, 0.1, 0.1]), 'back')
         btback.on_clicked(self.backcallback)
-        btexit= Button(plt.axes ([0.01, 0.12, 0.1, 0.1]), 'exit')
+        btexit= Button(plt.axes ([0.02, 0.17, 0.1, 0.1]), 'exit')
         btexit.on_clicked(self.exitcallback)
 
         for i in range(0,len(self.bodyparts)):
-            baxes.append(plt.axes([0.8, 0.06+0.06*i, 0.07, 0.05]))
+            baxes.append(plt.axes([0.85, 0.05+0.06*i, 0.12, 0.05]))
             buttons.append(Button(baxes[i],self.bodyparts[i]))
             #callbacks.append(self.callback0)
             #buttons[i].on_clicked(callbacks[i])
@@ -333,7 +342,7 @@ class ButtonsInMatplotlib:
 
 
 
-def manual_anotation(filelist):
+def manual_annotation(filelist, databasedir = None):
     ''' Manual slice classification from file list.
 
     filelist = ['/home/mjirik/data/img1.dcm', './img2.png']
@@ -342,8 +351,9 @@ def manual_anotation(filelist):
     '''
     import dicom
     from matplotlib.widgets import Button
+    import os
 
-    anotation = {}
+    annotation = {}
 
     print 'pocet souboru: ', len(filelist)
 
@@ -352,6 +362,7 @@ def manual_anotation(filelist):
     fileind = 0
     while fileind <= len(filelist):
         filepath = filelist[fileind]
+        relfilepath = os.path.relpath(filepath, databasedir)
 
     #for filepath in filelist:
 
@@ -392,10 +403,10 @@ def manual_anotation(filelist):
             fileind = len(filelist) + 1
         else:
             fileind = fileind + 1
-            anotation[filepath] = {'filepath':filepath, 'slicedescription': dm.retvalue}
+            annotation[relfilepath] = {'filepath':relfilepath, 'slicedescription': dm.retvalue}
 
 
-    anotation_to_file(anotation)
+    annotation_to_file(annotation)
 
 
 
@@ -404,13 +415,23 @@ if __name__ == "__main__":
     import sys
     import Tkinter
     import training
-    print 'ahoj'
+    print 'input params'
+    for arg in sys.argv:
+        print arg
+
+    databasedir = '/home/mjirik/data'
+    if len(sys.argv) < 1:
+        datatraindir = '/home/mjirik/data/jatra_06mm_jenjatra'
+    else:
+        datatraindir = sys.argv[1]
+
+    print datatraindir
     #dm = Dialogmenu()
     #print dm.retval
 
     #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
-    filelist = training.filesindir('/home/mjirik/data/jatra_06mm_jenjatra','*.*')
-    manual_anotation(filelist)
+    filelist = training.filesindir(datatraindir, '*.*')
+    manual_annotation(filelist,databasedir = databasedir)
     #traindata(filelist)
 
     # classifDialog()
