@@ -16,10 +16,12 @@
 
 # import funkcí z jiného adresáře
 import sys
-sys.path.append("../src/")
+#sys.path.append("../src/")
 import featurevector
 import training
 
+import logging
+logger = logging.getLogger(__name__)
 
 #import scipy.io
 #mat = scipy.io.loadmat('step0.mat')
@@ -368,11 +370,11 @@ def manual_annotation(filelist, databasedir = None):
 
 
         dcmdata=dicom.read_file(filepath)
-        print 'Modality: ', dcmdata.Modality
-        print 'PatientsName: ' , dcmdata.PatientsName
-        print 'BodyPartExamined: ', dcmdata.BodyPartExamined
-        print 'SliceThickness: ', dcmdata.SliceThickness
-        print 'PixelSpacing: ', dcmdata.PixelSpacing
+        logger.info('Modality: ' + dcmdata.Modality)
+        logger.info('PatientsName: ' + dcmdata.PatientsName)
+        logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
+        logger.info('SliceThickness: '+ str(dcmdata.SliceThickness))
+        logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
         # get data
         data = dcmdata.pixel_array
         #print data
@@ -389,7 +391,8 @@ def manual_annotation(filelist, databasedir = None):
         #bnext = Button(axnext, 'Next')
         #bnext.on_clicked(callback.next)
         #plt.close()
-        print 'finished (',fileind, '/', len(filelist), ') ' , dm.retvalue
+        logger.info( 'finished ('+str(fileind)+ '/'+ str(len(filelist)) + ') ' +
+                str(dm.retvalue))
 
         # User selects classification
         #dm = Dialogmenu()
@@ -415,9 +418,14 @@ if __name__ == "__main__":
     import sys
     import Tkinter
     import training
-    print 'input params'
+
+    logger.setLevel(logging.DEBUG)
+    ch = logging.StreamHandler()
+    logger.addHandler(ch)
+
+    logger.debug('input params')
     for arg in sys.argv:
-        print arg
+        logger.debug(''+arg)
 
     databasedir = '/home/mjirik/data'
     if len(sys.argv) < 1:
@@ -425,7 +433,7 @@ if __name__ == "__main__":
     else:
         datatraindir = sys.argv[1]
 
-    print datatraindir
+    logger.debug('Adresar ' + datatraindir)
     #dm = Dialogmenu()
     #print dm.retval
 
