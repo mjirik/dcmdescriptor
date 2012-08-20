@@ -25,30 +25,6 @@ import featurevector
 
 #print mat
 
-def filesindir(dirpath, wildcard="*.*", startpath=None):
-    """ Function generates list of files from specific dir
-
-    filesindir(dirpath, wildcard="*.*", startpath=None)
-
-    dirpath: required directory
-    wilcard: mask for files
-    startpath: start for relative path
-
-
-    """
-    import os
-    import glob
-
-
-    filelist = []
-    #print dirpath
-
-    for infile in glob.glob( os.path.join(dirpath, wildcard) ):
-        if startpath != None:
-            infile = os.path.relpath(infile, startpath)
-        filelist.append(infile)
-        #print "current file is: " + infile
-    return filelist
 
 
 
@@ -77,6 +53,7 @@ def traindata(fileslist):
     
 
 if __name__ == "__main__":
+    import system
     print 'ahoj'
     filelist = filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
     traindata(filelist)

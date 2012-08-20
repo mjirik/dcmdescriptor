@@ -18,7 +18,6 @@
 import sys
 #sys.path.append("../src/")
 import featurevector
-import training
 
 import logging
 logger = logging.getLogger(__name__)
@@ -357,12 +356,12 @@ def manual_annotation(filelist, databasedir = None):
 
     annotation = {}
 
-    print 'pocet souboru: ', len(filelist)
+    #print 'pocet souboru: ', len(filelist)
 
     # test jen na prvnim obrazku
     #filelist = [filelist[0]]
     fileind = 0
-    while fileind <= len(filelist):
+    while fileind < len(filelist):
         filepath = filelist[fileind]
         relfilepath = os.path.relpath(filepath, databasedir)
 
@@ -417,8 +416,9 @@ def manual_annotation(filelist, databasedir = None):
 if __name__ == "__main__":
     import sys
     import Tkinter
-    import training
+    import system
 
+    logging.basicConfig(format='%(asctime)s %(message)s')
     logger.setLevel(logging.DEBUG)
     ch = logging.StreamHandler()
     logger.addHandler(ch)
@@ -428,8 +428,9 @@ if __name__ == "__main__":
         logger.debug(''+arg)
 
     databasedir = '/home/mjirik/data'
-    if len(sys.argv) < 1:
-        datatraindir = '/home/mjirik/data/jatra_06mm_jenjatra'
+    if len(sys.argv) < 2:
+        #datatraindir = 'medical/data_orig/jatra-kma/jatra_06mm_jenjatra'
+        datatraindir = 'medical/data_orig/jatra-kma/jatra_5mm'
     else:
         datatraindir = sys.argv[1]
 
@@ -438,7 +439,7 @@ if __name__ == "__main__":
     #print dm.retval
 
     #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
-    filelist = training.filesindir(datatraindir, '*.*')
+    filelist = system.filesindir(datatraindir, '*.dcm',databasedir)
     manual_annotation(filelist,databasedir = databasedir)
     #traindata(filelist)
 
