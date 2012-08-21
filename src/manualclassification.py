@@ -30,28 +30,6 @@ logger = logging.getLogger(__name__)
 
 vyber = 0
 
-def traindata(fileslist):
-    import dicom
-
-    for filepath in filelist:
-        dcmdata=dicom.read_file(filepath)
-        print 'Modality: ', dcmdata.Modality
-        print 'PatientsName: ' , dcmdata.PatientsName
-        print 'BodyPartExamined: ', dcmdata.BodyPartExamined
-        print 'SliceThickness: ', dcmdata.SliceThickness
-        print 'PixelSpacing: ', dcmdata.PixelSpacing
-        # get data
-        data = dcmdata.pixel_array
-        #print data
-        featurevector.fvector(data)
-
-        import matplotlib.pyplot as plt
-
-        plt.figure()
-
-        plt.imshow(data, cmap=plt.cm.gray)
-        plt.show()
-        plt.close()
     
 
 def oneimage(data=1):
@@ -117,94 +95,6 @@ def classifDialog():
 
 
 
-class Dialogmenu:
-    import sys
-    import Tkinter
-    retval = 0
-    rootwin = None
-    win = None
-
-    bodyparts = ['foot', 'calf', 'knee', 'thigh','hip','colon', \
-            'kidneys', 'liver', 'heart', 'lungs', 'neck', \
-            'face', 'brain',]
-    def __init__(self ):
-        self.rootwin = Tkinter.Tk()
-        #self.win = Tkinter.Toplevel()                                     
-        #def start():
-        #menuindexes =range(len(menuitemlist)) 
-        Tkinter.Button(self.rootwin, text=self.bodyparts[0], command=lambda:
-                self.callback(self.bodyparts[0],0)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[1], command=lambda:
-                self.callback(self.bodyparts[1],1)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[2], command=lambda:
-                self.callback(self.bodyparts[2],2)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[3], command=lambda:
-                self.callback(self.bodyparts[3],3)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[4], command=lambda:
-                self.callback(self.bodyparts[4],4)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[5], command=lambda:
-                self.callback(self.bodyparts[5],5)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[6], command=lambda:
-                self.callback(self.bodyparts[6],6)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[7], command=lambda:
-                self.callback(self.bodyparts[7],7)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[8], command=lambda:
-                self.callback(self.bodyparts[8],8)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[9], command=lambda:
-                self.callback(self.bodyparts[9],9)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[10], command=lambda:
-                self.callback(self.bodyparts[10],10)).pack()
-        Tkinter.Button(self.rootwin, text=self.bodyparts[11], command=lambda:
-                self.callback(self.bodyparts[11],11)).pack()
-
-
-
-        Tkinter.mainloop()
-
-    def callback(self, name, idx):
-        #print "clicked!", name, ' i ', idx
-        # win = Tkinter.Toplevel()                                     
-        self.rootwin.destroy()
-        self.retval = name
-
-
-
-def dlgselectclose(rootwin, select):
-    #if makemodal:
-    #    win.focus_set()       
-    #    win.grab_set()           
-    #    win.wait_window()       
-    print rootwin
-    print select
-    print 'hh'
-    #rootwin.destroy
-    # return select
-    global vyber 
-    vyber = select
-    rootwin.destroy()
-
-def dialogmenu(menuitemlist):
-    import sys
-    import Tkinter
-
-    rootwin = Tkinter.Tk()
-    menuindexes =range(len(menuitemlist)) 
-
-    #for menuitemindex in menuindexes:
-    #    mnidx = menuitemindex
-    #    print 'mnitemidx ', menuitemindex
-    #    Tkinter.Button(rootwin, text=menuitemlist[menuitemindex], \
-    #            command=lambda: dlgselectclose(rootwin,menuindexes[mnidx])).pack() 
-    #
-    #    Tkinter.Button(rootwin, text=menuitemlist[menuitemindex],command=lambda:
-    #            dlgselectclose(rootwin,8)).pack()
-    Tkinter.Button(rootwin, text=menuitemlist[menuitemindex], \
-            command=lambda: dlgselectclose(rootwin,menuindexes[mnidx])).pack() 
-
-
-
-    rootwin.mainloop()
-    print 'a po ',vyber
 
 #class values:
 #    val = 0
@@ -214,17 +104,6 @@ def dialogmenu(menuitemlist):
 
 
 
-def annotation_to_file(annotation, filename = 'annotation.json'):
-    import json
-    import yaml
-    with open(filename, mode='w') as f:
-        json.dump(annotation,f)
-
-    # write to yaml
-
-    f = open('annotation.yaml', 'w')
-    yaml.dump(annotation,f)
-    f.close
 
 
 
@@ -235,6 +114,7 @@ class ButtonsInMatplotlib:
     bodyparts = ['foot', 'calf', 'knee', 'thigh','pelvis','colon', \
             'kidneys', 'liver', 'heart', 'lungs', 'neck', \
             'face', 'brain']
+    bodypartsind=0
     retvalue=0
     backrequest = 0
     exitrequest = 0
@@ -296,6 +176,7 @@ class ButtonsInMatplotlib:
         import matplotlib.pyplot as plt
         plt.close()
         self.retvalue = self.bodyparts[ind]
+        self.bodypartsind = ind
 
     def callback0(self, evnt ):
         #self.retvalue = self.bodyparts[0]
@@ -354,7 +235,7 @@ def manual_annotation(filelist, databasedir = None):
     from matplotlib.widgets import Button
     import os
 
-    annotation = {}
+    annotation_data = {}
 
     #print 'pocet souboru: ', len(filelist)
 
@@ -369,11 +250,11 @@ def manual_annotation(filelist, databasedir = None):
 
 
         dcmdata=dicom.read_file(filepath)
-        logger.info('Modality: ' + dcmdata.Modality)
-        logger.info('PatientsName: ' + dcmdata.PatientsName)
-        logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
-        logger.info('SliceThickness: '+ str(dcmdata.SliceThickness))
-        logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
+        #logger.info('Modality: ' + dcmdata.Modality)
+        #logger.info('PatientsName: ' + dcmdata.PatientsName)
+        #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
+        #logger.info('SliceThickness: '+ str(dcmdata.SliceThickness))
+        #logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
         # get data
         data = dcmdata.pixel_array
         #print data
@@ -405,10 +286,15 @@ def manual_annotation(filelist, databasedir = None):
             fileind = len(filelist) + 1
         else:
             fileind = fileind + 1
-            annotation[relfilepath] = {'filepath':relfilepath, 'slicedescription': dm.retvalue}
+            annotation_data[relfilepath] = {'filepath':relfilepath,
+                    'slicedescription': dm.retvalue,
+                    'sliceclass':dm.bodypartsind}
 
 
-    annotation_to_file(annotation)
+    annotation={}
+    annotation['data'] = annotation_data
+    annotation['info'] = {'classes': dm.bodyparts}
+    system.annotation_to_file(annotation)
 
 
 

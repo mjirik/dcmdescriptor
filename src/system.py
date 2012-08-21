@@ -2,22 +2,11 @@
 # -*- coding: utf-8 -*-
 
 
-#
-#from sklearn import svm
-#X = [[0, 0], [1, 1],[0,4],[0.1, 0.2]]
-#Y = [0, 1, 2 , 0]
-#clf = svm.SVC()
-#clf.fit(X, Y)  
-#print clf.predict([[2,3]])
-#
-#dec = clf.decision_function([[1]])
-#dec.shape[1]
-#
 
 # import funkcí z jiného adresáře
 import sys
 #sys.path.append("../src/")
-import featurevector
+#import featurevector
 
 import logging
 logger = logging.getLogger(__name__)
@@ -28,7 +17,26 @@ logger = logging.getLogger(__name__)
 #print mat
 
 
+def annotation_from_file(filename = 'annotation.yaml'):
+    import yaml
+    f = open(filename, 'r')
+    yml = yaml.load(f)
+    f.close()
+    return yml
 
+def annotation_to_file(annotation, filename = 'annotation.yaml'):
+    '''Writes annotation in file
+    '''
+    #import json
+    #with open(filename, mode='w') as f:
+    #    json.dump(annotation,f)
+
+    # write to yaml
+
+    import yaml
+    f = open(filename, 'w')
+    yaml.dump(annotation,f)
+    f.close
 
 def filesindir(dirpath, wildcard="*.*", startpath=None):
     """ Function generates list of files from specific dir

@@ -19,6 +19,8 @@ import sys
 sys.path.append("../src/")
 import featurevector
 
+import pdb; 
+#  pdb.set_trace();
 
 #import scipy.io
 #mat = scipy.io.loadmat('step0.mat')
@@ -26,12 +28,26 @@ import featurevector
 #print mat
 
 
+#X = [[0, 0], [1, 1],[0,4],[0.1, 0.2]]
+#Y = [0, 1, 2 , 0]
+#print clf.predict([[2,3]])
+#
+#dec = clf.decision_function([[1]])
+#dec.shape[1]
 
 
-def traindata(fileslist):
+def traindata(annotation, databasedir):
     import dicom
+    import os
+    from sklearn import svm
 
-    for filepath in filelist:
+    fvs=[]
+    classes=[]
+
+    for itm in annotation['data'].itervalues():
+        #pdb.set_trace();
+        filepath = os.path.join(databasedir, itm['filepath'])
+
         dcmdata=dicom.read_file(filepath)
         print 'Modality: ', dcmdata.Modality
         print 'PatientsName: ' , dcmdata.PatientsName
@@ -41,7 +57,16 @@ def traindata(fileslist):
         # get data
         data = dcmdata.pixel_array
         #print data
-        featurevector.fvector(data)
+        #fvs[itm['filepath']] = 
+        # fv: lbp hist , fvbins possible bins in histogram
+        fv,fvbins = featurevector.fvector(data)
+        fvs.append(fv)
+        classes.append(itm['sliceclass'])
+
+        
+    clf = svm.SVC()
+    clf.fit(fvs, classes)  
+    pdb.set_trace();
 
         #import matplotlib.pyplot as plt
 
@@ -55,6 +80,8 @@ def traindata(fileslist):
 if __name__ == "__main__":
     import system
     print 'ahoj'
-    filelist = filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
-    traindata(filelist)
+    annotation = system.annotation_from_file('annotation.yaml')
+    #filelist = filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
+
+    traindata(annotation,'/home/mjirik/data/')
 
