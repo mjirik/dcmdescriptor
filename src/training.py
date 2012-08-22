@@ -64,9 +64,21 @@ def traindata(annotation, databasedir):
         classes.append(itm['sliceclass'])
 
         
+
+
+    # spilt feature vectors into training and testing group
+    fvs_train = fvs[0:int(len(fvs)*0.75)]
+    fvs_test  = fvs[int(len(fvs)*0.75):]
+    classes_train = classes[0:int(len(fvs)*0.75)]
+    classes_test  = classes[int(len(fvs)*0.75):]
     clf = svm.SVC()
-    clf.fit(fvs, classes)  
-    pdb.set_trace();
+    clf.fit(fvs_train, classes_train)  
+    prediction = clf.predict(fvs_test)
+    print sum(prediction != classes_test) , ' / ', len(prediction)
+
+#
+#dec = clf.decision_function([[1]])
+#dec.shape[1]
 
         #import matplotlib.pyplot as plt
 
