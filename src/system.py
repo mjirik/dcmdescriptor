@@ -5,12 +5,15 @@
 
 # import funkcí z jiného adresáře
 import sys
+import os
 #sys.path.append("../src/")
 #import featurevector
 
 import logging
 logger = logging.getLogger(__name__)
 
+import pdb; 
+#  pdb.set_trace();
 #import scipy.io
 #mat = scipy.io.loadmat('step0.mat')
 
@@ -73,6 +76,50 @@ def filesindir(dirpath, wildcard="*.*", startpath=None):
         filelist.append(infile)
         #print "current file is: " + infile
     return filelist
+
+
+def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
+    import dicom
+    if filelist == None:
+        if dirpath != None:
+            filelist = filesindir(dirpath, wildcard, startpath)
+        else:
+            logger.error('Wrong input params')
+
+    files=[]
+
+    ## doplneni o cestu k datovemu adresari
+    #if startpath != None:
+    #    completedirpath = os.path.join( startpath, dirpath)
+    #else:
+    #    completedirpath = dirpath
+
+    # pruchod soubory
+    for filepath in filelist:
+        fullfilepath = os.path.join(startpath, filepath)
+
+        dcmdata=dicom.read_file(fullfilepath)
+        #os.path.split(fullfilepath)
+        
+        
+        files.append([fullfilepath, dcmdata.FrameofReferenceUID, 
+            dcmdata.SeriesInstanceUID, dcmdata.StudyInstanceUID])
+        #logger.info('Modality: ' + dcmdata.Modality)
+        #logger.info('PatientsName: ' + dcmdata.PatientsName)
+        #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
+        #logger.info('SliceThickness: '+ str(dcmdata.SliceThickness))
+        #logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
+        # get data
+        #data = dcmdata.pixel_array
+    pdb.set_trace();
+
+    # TODO dopsat řazení
+    #filelist.sort(lambda:files)
+    return filelist
+
+
+
+
 
 
 

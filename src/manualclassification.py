@@ -325,7 +325,8 @@ if __name__ == "__main__":
     #print dm.retval
 
     #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
-    filelist = system.filesindir(datatraindir, '*.dcm',databasedir)
+    #filelist = system.filesindir(datatraindir, '*.dcm',databasedir)
+    filelist = system.dcmsortedlist(datatraindir, '*.dcm',databasedir)
     manual_annotation(filelist,databasedir = databasedir)
     #traindata(filelist)
 
