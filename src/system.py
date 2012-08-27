@@ -80,6 +80,7 @@ def filesindir(dirpath, wildcard="*.*", startpath=None):
 
 def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
     import dicom
+    import operator
     if filelist == None:
         if dirpath != None:
             filelist = filesindir(dirpath, wildcard, startpath)
@@ -103,7 +104,7 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
         
         
         files.append([fullfilepath, dcmdata.FrameofReferenceUID, 
-            dcmdata.SeriesInstanceUID, dcmdata.StudyInstanceUID])
+            dcmdata.StudyInstanceUID, dcmdata.SeriesInstanceUID, ])
         #logger.info('Modality: ' + dcmdata.Modality)
         #logger.info('PatientsName: ' + dcmdata.PatientsName)
         #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
@@ -113,8 +114,19 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
         #data = dcmdata.pixel_array
     pdb.set_trace();
 
+    # a řadíme podle frame 
+    files.sort(key=operator.itemgetter(1))
+    files.sort(key=operator.itemgetter(2))
+    files.sort(key=operator.itemgetter(3))
+
     # TODO dopsat řazení
     #filelist.sort(lambda:files)
+    filelist = []
+    for onefile in files:
+        files.append(onefile[0])
+
+
+
     return filelist
 
 
