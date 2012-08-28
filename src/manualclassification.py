@@ -317,6 +317,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         #datatraindir = 'medical/data_orig/jatra-kma/jatra_06mm_jenjatra'
         datatraindir = 'medical/data_orig/jatra-kma/jatra_5mm'
+        #datatraindir = 'medical/dara'
     else:
         datatraindir = sys.argv[1]
 

@@ -79,8 +79,21 @@ def filesindir(dirpath, wildcard="*.*", startpath=None):
 
 
 def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
+    """ Function returns sorted list of dicom files. File paths are organized by
+    SeriesUID, StudyUID and FrameUID
+
+    Example:
+    dcmsortedlist ('/home/mjirik/data/medical/jatra_5mm','*.dcm')
+    dcmsortedlist ('medical/jatra_5mm','*.dcm','/home/mjirik/data/')
+
+    or you can give filelist for sorting
+
+    dcmsortedlist(filelist)
+
+    """
     import dicom
     import operator
+    import copy
     if filelist == None:
         if dirpath != None:
             filelist = filesindir(dirpath, wildcard, startpath)
@@ -103,8 +116,23 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
         #os.path.split(fullfilepath)
         
         
-        files.append([fullfilepath, dcmdata.FrameofReferenceUID, 
-            dcmdata.StudyInstanceUID, dcmdata.SeriesInstanceUID, ])
+        files.append([fullfilepath, 
+            #copy.copy(dcmdata.FrameofReferenceUID), 
+            #copy.copy(dcmdata.StudyInstanceUID),
+            #copy.copy(dcmdata.SeriesInstanceUID) 
+            dcmdata.InstanceNumber,
+            dcmdata.SeriesNumber,
+            dcmdata.AcquisitionNumber
+            ])
+        #logger.info('FrameUID : ' + dcmdata.FrameofReferenceUID)
+        #print 'FrameUID : ' + dcmdata.FrameofReferenceUID
+        logger.debug( \
+         'FrameUID : ' + str(dcmdata.InstanceNumber) + \
+                ' ' + str(dcmdata.SeriesNumber) + \
+                ' ' + str(dcmdata.AcquisitionNumber)\
+                )
+
+        # dcmdata.InstanceNumber
         #logger.info('Modality: ' + dcmdata.Modality)
         #logger.info('PatientsName: ' + dcmdata.PatientsName)
         #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
@@ -112,20 +140,20 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
         #logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
         # get data
         #data = dcmdata.pixel_array
-    pdb.set_trace();
 
     # a řadíme podle frame 
-    files.sort(key=operator.itemgetter(1))
     files.sort(key=operator.itemgetter(2))
     files.sort(key=operator.itemgetter(3))
+    files.sort(key=operator.itemgetter(1))
 
     # TODO dopsat řazení
     #filelist.sort(lambda:files)
     filelist = []
     for onefile in files:
-        files.append(onefile[0])
+        filelist.append(onefile[0])
 
 
+    pdb.set_trace();
 
     return filelist
 

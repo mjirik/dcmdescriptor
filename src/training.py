@@ -34,12 +34,15 @@ import pdb;
 #
 #dec = clf.decision_function([[1]])
 #dec.shape[1]
+def rnd_split(array, p=0.5):
+    return 1
 
 
 def traindata(annotation, databasedir):
     import dicom
     import os
     from sklearn import svm
+    import random
 
     fvs=[]
     classes=[]
@@ -67,8 +70,11 @@ def traindata(annotation, databasedir):
 
 
     # spilt feature vectors into training and testing group
+
     fvs_train = fvs[0:int(len(fvs)*0.75)]
     fvs_test  = fvs[int(len(fvs)*0.75):]
+    #fvs_train = random.sample(fvs,int(len(fvs)*0.5))
+    #fvs_test  = fvs
     classes_train = classes[0:int(len(fvs)*0.75)]
     classes_test  = classes[int(len(fvs)*0.75):]
     clf = svm.SVC()
