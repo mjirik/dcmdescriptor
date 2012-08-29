@@ -222,11 +222,11 @@ class ButtonsInMatplotlib:
         import matplotlib.pyplot as plt
         plt.close()
 
-def manual_annotation_from_dir(datadir, databasedir, annotationfile =
-'annotation.yaml', newannotationfile = False):
+def manual_annotation_from_dir(datadir, databasedir, annotationfile = 'annotation.yaml', newannotationfile = False):
     filelist = system.dcmsortedlist(datatraindir, '*.dcm',\
             databasedir, annotationfile, newannotationfile)
-    manual_annotation(filelist,databasedir = databasedir, annotationfile)
+    manual_annotation(filelist,databasedir = databasedir,
+            annotationfile=annotationfile)
 
 
 
@@ -247,7 +247,7 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
     # vytvoreni noveho souboru
     if newannotationfile | operator.not_(os.path.exists(annotationfile)):
         annotation_data = {}
-    else 
+    else:
         annotation_data = system.annotation_from_file(annotationfile)
         print 'přidávám anotaci do souboru'
         
@@ -330,8 +330,8 @@ if __name__ == "__main__":
 
     databasedir = '/home/mjirik/data'
     if len(sys.argv) < 2:
-        #datatraindir = 'medical/data_orig/jatra-kma/jatra_06mm_jenjatra'
-        datatraindir = 'medical/data_orig/jatra-kma/jatra_5mm'
+        datatraindir = 'medical/data_orig/jatra-kma/jatra_06mm_jenjatra'
+        #datatraindir = 'medical/data_orig/jatra-kma/jatra_5mm'
         #datatraindir = 'medical/dara'
     else:
         datatraindir = sys.argv[1]
