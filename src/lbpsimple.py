@@ -60,14 +60,14 @@ def lbp2oneslice (dat, lbpkern):
     dataout = numpy.zeros(dat.shape, dtype=numpy.int)
     
     for i in range(1,len (lbpkern)):
-        print i
+        #print i
         onekern = lbpkern[i]
 
         
         dataconv = sg.convolve(dat, onekern, "same")
         
         dataout  = (dataconv > 0) * 1 * pow(2,i-1) + dataout
-        print dataout
+        #print dataout
         
     return dataout
 

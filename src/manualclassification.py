@@ -224,7 +224,8 @@ class ButtonsInMatplotlib:
 
 
 
-def manual_annotation(filelist, databasedir = None):
+def manual_annotation(filelist, databasedir = None, annotationfile =
+'annotation.yaml'):
     ''' Manual slice classification from file list.
 
     filelist = ['/home/mjirik/data/img1.dcm', './img2.png']
@@ -294,7 +295,7 @@ def manual_annotation(filelist, databasedir = None):
     annotation={}
     annotation['data'] = annotation_data
     annotation['info'] = {'classes': dm.bodyparts}
-    system.annotation_to_file(annotation)
+    system.annotation_to_file(annotation, annotationfile)
 
 
 
@@ -328,7 +329,8 @@ if __name__ == "__main__":
     #filelist = training.filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
     #filelist = system.filesindir(datatraindir, '*.dcm',databasedir)
     filelist = system.dcmsortedlist(datatraindir, '*.dcm',databasedir)
-    manual_annotation(filelist,databasedir = databasedir)
+    manual_annotation(filelist,databasedir = databasedir, annotationfile =
+            '../data/annotation')
     #traindata(filelist)
 
     # classifDialog()

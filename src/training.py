@@ -34,8 +34,35 @@ import pdb;
 #
 #dec = clf.decision_function([[1]])
 #dec.shape[1]
-def rnd_split(array, p=0.5):
-    return 1
+
+def rnd_indexes(ln, nind):
+    """ Function return random indexes of list with length ln
+    rnd_indexes(10,5)
+
+    [1, 3, 4, 8, 9] 
+    """
+    import random
+    rindxs = random.sample(range(0,ln),nind)
+
+    return rindxs
+
+
+
+
+def split_list(restlist, rindxs):
+    """ Split list by list of indexes
+
+    a,b = split_list([2, 1, 2, 3, 4, 5], [2,4])
+    a = [1, 3]
+    b = [2, 2, 4, 5]
+    """
+    rindxs = sorted(rindxs, reverse=True)
+    selectlist = []
+
+    for rind in rindxs:
+        selectlist.append(restlist.pop(rind))
+
+    return selectlist, restlist
 
 
 def traindata(annotation, databasedir):
@@ -71,12 +98,17 @@ def traindata(annotation, databasedir):
 
     # spilt feature vectors into training and testing group
 
-    fvs_train = fvs[0:int(len(fvs)*0.75)]
-    fvs_test  = fvs[int(len(fvs)*0.75):]
-    #fvs_train = random.sample(fvs,int(len(fvs)*0.5))
-    #fvs_test  = fvs
-    classes_train = classes[0:int(len(fvs)*0.75)]
-    classes_test  = classes[int(len(fvs)*0.75):]
+    #fvs_train = fvs[0:int(len(fvs)*0.75)]
+    #fvs_test  = fvs[int(len(fvs)*0.75):]
+    #classes_train = classes[0:int(len(fvs)*0.75)]
+    #classes_test  = classes[int(len(fvs)*0.75):]
+
+
+    pdb.set_trace();
+    rindxs = rnd_indexes(len(fvs), int(len(fvs)*0.75))
+    fvs_train, fvs_test = split_list(fvs, rindxs)
+    classes_train, classes_test = split_list(classes, rindxs)
+
     clf = svm.SVC()
     clf.fit(fvs_train, classes_train)  
     prediction = clf.predict(fvs_test)
