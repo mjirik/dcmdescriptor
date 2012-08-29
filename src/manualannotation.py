@@ -222,10 +222,16 @@ class ButtonsInMatplotlib:
         import matplotlib.pyplot as plt
         plt.close()
 
+def manual_annotation_from_dir(datadir, databasedir, annotationfile =
+'annotation.yaml', newannotationfile = False):
+    filelist = system.dcmsortedlist(datatraindir, '*.dcm',\
+            databasedir, annotationfile, newannotationfile)
+    manual_annotation(filelist,databasedir = databasedir, annotationfile)
+
 
 
 def manual_annotation(filelist, databasedir = None, annotationfile =
-'annotation.yaml'):
+'annotation.yaml', newannotationfile = False):
     ''' Manual slice classification from file list.
 
     filelist = ['/home/mjirik/data/img1.dcm', './img2.png']
@@ -235,8 +241,16 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
     import dicom
     from matplotlib.widgets import Button
     import os
+    import operator
 
-    annotation_data = {}
+
+    # vytvoreni noveho souboru
+    if newannotationfile | operator.not_(os.path.exists(annotationfile)):
+        annotation_data = {}
+    else 
+        annotation_data = system.annotation_from_file(annotationfile)
+        print 'přidávám anotaci do souboru'
+        
 
     #print 'pocet souboru: ', len(filelist)
 
@@ -330,7 +344,7 @@ if __name__ == "__main__":
     #filelist = system.filesindir(datatraindir, '*.dcm',databasedir)
     filelist = system.dcmsortedlist(datatraindir, '*.dcm',databasedir)
     manual_annotation(filelist,databasedir = databasedir, annotationfile =
-            '../data/annotation')
+            '../data/annotation.yaml')
     #traindata(filelist)
 
     # classifDialog()
