@@ -2,17 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
-#
-#from sklearn import svm
-#X = [[0, 0], [1, 1],[0,4],[0.1, 0.2]]
-#Y = [0, 1, 2 , 0]
-#clf = svm.SVC()
-#clf.fit(X, Y)  
-#print clf.predict([[2,3]])
-#
-#dec = clf.decision_function([[1]])
-#dec.shape[1]
-#
+import pdb
+#  pdb.set_trace();
 
 # import funkcí z jiného adresáře
 import sys
@@ -60,15 +51,15 @@ def oneimage(data=1):
 
 
 def dialog():
-    win = Tkinter.Toplevel()                                     
-    Tkinter.Label(win,  text='Message!').pack()   
+    win = Tkinter.Toplevel()
+    Tkinter.Label(win,  text='Message!').pack()
     ch = 0
-    Tkinter.Button(win, text='OK', command=win.destroy).pack()   
+    Tkinter.Button(win, text='OK', command=win.destroy).pack()
     if makemodal:
-        win.focus_set()       
-        win.grab_set()           
-        win.wait_window()       
-    print 'dialog exit'         
+        win.focus_set()
+        win.grab_set()
+        win.wait_window()
+    print 'dialog exit'
     return 6
 
 def classifDialog():
@@ -81,14 +72,14 @@ def classifDialog():
     listbox = Tkinter.Listbox(rootwin)
     listbox.pack()
 
-    win = Tkinter.Toplevel()                                     
+    win = Tkinter.Toplevel()
     listbox.insert(Tkinter.END, u"položka seznamu")
     for item in [u"jedna", u"dva", u"tři", u"čtyři"]:
             listbox.insert(Tkinter.END, item)
     #if makemodal:
-    #    win.focus_set()       
-    #    win.grab_set()           
-    #    win.wait_window()       
+    #    win.focus_set()
+    #    win.grab_set()
+    #    win.wait_window()
     Tkinter.Button(rootwin, text='popup', command=rootwin.destroy).pack() 
     rootwin.mainloop()
     items = map(int, listbox.curselection())
@@ -113,7 +104,7 @@ class ButtonsInMatplotlib:
     import matplotlib.pyplot as plt
     bodyparts = ['foot', 'calf', 'knee', 'thigh','pelvis','colon', \
             'kidneys', 'liver', 'heart', 'lungs', 'neck', \
-            'face', 'brain']
+            'face', 'brain','error']
     bodypartsind=0
     retvalue=0
     backrequest = 0
@@ -142,7 +133,7 @@ class ButtonsInMatplotlib:
             buttons.append(Button(baxes[i],self.bodyparts[i]))
             #callbacks.append(self.callback0)
             #buttons[i].on_clicked(callbacks[i])
-        
+
         buttons[0].on_clicked(self.callback0)
         buttons[1].on_clicked(self.callback1)
         buttons[2].on_clicked(self.callback2)
@@ -156,6 +147,7 @@ class ButtonsInMatplotlib:
         buttons[10].on_clicked(self.callback10)
         buttons[11].on_clicked(self.callback11)
         buttons[12].on_clicked(self.callback12)
+        buttons[13].on_clicked(self.callback13)
         #btn0 = Button(baxes[0],self.bodyparts[0])
         #btn1 = Button(baxes[1],self.bodyparts[1])
         #btn2 = Button(baxes[2],self.bodyparts[2])
@@ -205,6 +197,8 @@ class ButtonsInMatplotlib:
         self.stdcallback(11)
     def callback12(self, evnt ):
         self.stdcallback(12)
+    def callback13(self, evnt ):
+        self.stdcallback(13)
 
 
 
@@ -222,46 +216,67 @@ class ButtonsInMatplotlib:
         import matplotlib.pyplot as plt
         plt.close()
 
-def manual_annotation_from_dir(datadir, databasedir, annotationfile = 'annotation.yaml', newannotationfile = False):
-    filelist = system.dcmsortedlist(datatraindir, '*.dcm',\
-            databasedir, annotationfile, newannotationfile)
-    manual_annotation(filelist,databasedir = databasedir,
-            annotationfile=annotationfile)
+def manual_annotation_from_dir(datadir, databasedir='', wildcard = '*.dcm',\
+        annotationfile = 'annotation.yaml', newannotationfile = False, 
+        step=1):
+    """ User interactive data annotation 
+
+    annotationfile: name of filelist
+    newannotationfile: True/False Creates new file, oteherwise is new 
+        annotation added to end of existing filelist
+    step: if data are sorted there is no need for annotate every slice
+    """
+
+    import system
+    filelist = system.dcmsortedlist(datadir, wildcard, databasedir)
+    manual_annotation(filelist,databasedir = databasedir, 
+            annotationfile=annotationfile,
+            newannotationfile=newannotationfile, 
+            step=step
+            )
 
 
 
 def manual_annotation(filelist, databasedir = None, annotationfile =
-'annotation.yaml', newannotationfile = False):
+'annotation.yaml', newannotationfile = False, step = 1):
     ''' Manual slice classification from file list.
 
-    filelist = ['/home/mjirik/data/img1.dcm', './img2.png']
+    >>> filelist = ['/home/mjirik/data/img1.dcm', './img2.png']
 
     manual_anotation(filelist)
+    
     '''
     import dicom
     from matplotlib.widgets import Button
     import os
     import operator
+    import matplotlib.pyplot as plt
+    import system
 
 
     # vytvoreni noveho souboru
     if newannotationfile | operator.not_(os.path.exists(annotationfile)):
-        annotation_data = {}
+        annotation = {}
+        annotation ['data'] = {}
     else:
-        annotation_data = system.annotation_from_file(annotationfile)
+        annotation = system.annotation_from_file(annotationfile)
         print 'přidávám anotaci do souboru'
-        
+
 
     #print 'pocet souboru: ', len(filelist)
 
     # test jen na prvnim obrazku
     #filelist = [filelist[0]]
+    # For step annotation
+    #prev_retvalue = 'none'
+    #prev_bodypartsind = 0
+    dm = None
+
     fileind = 0
     while fileind < len(filelist):
         filepath = filelist[fileind]
         relfilepath = os.path.relpath(filepath, databasedir)
 
-    #for filepath in filelist:
 
 
         dcmdata=dicom.read_file(filepath)
@@ -272,42 +287,29 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
         #logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
         # get data
         data = dcmdata.pixel_array
-        #print data
-        #featurevector.fvector(data)
 
-        import matplotlib.pyplot as plt
-
-        # Button(
-        
-        dm = ButtonsInMatplotlib(data)
-        
-        #plt.show()
-        #axnext = plt.axes([0.81, 0.05, 0.1, 0.075])
-        #bnext = Button(axnext, 'Next')
-        #bnext.on_clicked(callback.next)
-        #plt.close()
-        logger.info( 'finished ('+str(fileind)+ '/'+ str(len(filelist)) + ') ' +
-                str(dm.retvalue))
-
-        # User selects classification
-        #dm = Dialogmenu()
-        #print dm.retval
+        if fileind % step == 0:
+            dm = ButtonsInMatplotlib(data)
+            logger.info( 'finished ('+str(fileind)+ '/'+ str(len(filelist))\
+                    + ') ' + str(dm.retvalue))
 
 
 
         if dm.backrequest == 1:
-            fileind = fileind -1
+            fileind = fileind -step
+            dm.backcallback = 0
         elif dm.exitrequest == 1:
-            fileind = len(filelist) + 1
+            fileind = len(filelist) + step
         else:
-            fileind = fileind + 1
-            annotation_data[relfilepath] = {'filepath':relfilepath,
+            fileind = fileind + step
+            annotation['data'][relfilepath] = {'filepath':relfilepath,
                     'slicedescription': dm.retvalue,
                     'sliceclass':dm.bodypartsind}
 
 
-    annotation={}
-    annotation['data'] = annotation_data
+    #pdb.set_trace();
+    #annotation={}
+    #annotation['data'] = annotation_data
     annotation['info'] = {'classes': dm.bodyparts}
     system.annotation_to_file(annotation, annotationfile)
 
@@ -365,4 +367,4 @@ if __name__ == "__main__":
 #        rootwin.wait_window()       
 #    print 'a pred ', vyber
 #    #oneimage()
-#
+

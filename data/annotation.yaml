@@ -1,206 +1,372 @@
 data:
-  data:
-    data:
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm,
-        sliceclass: 8, slicedescription: heart}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0002.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0002.dcm,
-        sliceclass: 8, slicedescription: heart}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0003.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0003.dcm,
-        sliceclass: 8, slicedescription: heart}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0004.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0004.dcm,
-        sliceclass: 8, slicedescription: heart}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0005.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0005.dcm,
-        sliceclass: 8, slicedescription: heart}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0006.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0006.dcm,
-        sliceclass: 8, slicedescription: heart}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0007.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0007.dcm,
-        sliceclass: 8, slicedescription: heart}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0008.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0008.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0009.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0009.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0010.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0010.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0011.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0011.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0012.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0012.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0013.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0013.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0014.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0014.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0015.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0015.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0016.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0016.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0017.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0017.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0018.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0018.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0019.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0019.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0020.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0020.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0021.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0021.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0022.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0022.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0023.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0023.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0024.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0024.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0025.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0025.dcm,
-        sliceclass: 7, slicedescription: liver}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0026.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0026.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0027.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0027.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0028.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0028.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0029.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0029.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0030.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0030.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0031.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0031.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0032.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0032.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0033.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0033.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0034.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0034.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0035.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0035.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0036.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0036.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0037.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0037.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0038.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0038.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0039.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0039.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0040.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0040.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0041.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0041.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0042.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0042.dcm,
-        sliceclass: 6, slicedescription: kidneys}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0043.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0043.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0044.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0044.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0045.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0045.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0046.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0046.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0047.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0047.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0048.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0048.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0049.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0049.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0050.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0050.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0051.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0051.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0052.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0052.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0053.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0053.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0054.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0054.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0055.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0055.dcm,
-        sliceclass: 5, slicedescription: colon}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0056.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0056.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0057.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0057.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0058.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0058.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0059.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0059.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0060.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0060.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0061.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0061.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0062.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0062.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0063.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0063.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0064.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0064.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0065.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0065.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0066.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0066.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0067.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0067.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0068.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0068.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0069.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0069.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0070.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0070.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0071.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0071.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0072.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0072.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0073.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0073.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0074.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0074.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0075.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0075.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0076.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0076.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0077.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0077.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0078.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0078.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0079.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0079.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0080.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0080.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0081.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0081.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0082.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0082.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0083.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0083.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0084.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0084.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0085.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0085.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0086.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0086.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0087.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0087.dcm,
-        sliceclass: 4, slicedescription: pelvis}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0088.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0088.dcm,
-        sliceclass: 3, slicedescription: thigh}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0089.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0089.dcm,
-        sliceclass: 3, slicedescription: thigh}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0090.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0090.dcm,
-        sliceclass: 3, slicedescription: thigh}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0091.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0091.dcm,
-        sliceclass: 3, slicedescription: thigh}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0092.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0092.dcm,
-        sliceclass: 3, slicedescription: thigh}
-      medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0093.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0093.dcm,
-        sliceclass: 3, slicedescription: thigh}
-    info:
-      classes: [foot, calf, knee, thigh, pelvis, colon, kidneys, liver, heart, lungs,
-        neck, face, brain]
-    medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm,
-      sliceclass: 8, slicedescription: heart}
-  info:
-    classes: [foot, calf, knee, thigh, pelvis, colon, kidneys, liver, heart, lungs,
-      neck, face, brain]
+  medical/data_orig/51314913/FNPL_51314913_228408607.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408607.DCM,
+    sliceclass: 13, slicedescription: error}
+  medical/data_orig/51314913/FNPL_51314913_228408608.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408608.DCM,
+    sliceclass: 13, slicedescription: error}
+  medical/data_orig/51314913/FNPL_51314913_228408609.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408609.DCM,
+    sliceclass: 13, slicedescription: error}
+  medical/data_orig/51314913/FNPL_51314913_228408610.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408610.DCM,
+    sliceclass: 13, slicedescription: error}
+  medical/data_orig/51314913/FNPL_51314913_228408611.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408611.DCM,
+    sliceclass: 13, slicedescription: error}
+  medical/data_orig/51314913/FNPL_51314913_228408612.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408612.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408613.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408613.DCM,
+    sliceclass: 13, slicedescription: error}
+  medical/data_orig/51314913/FNPL_51314913_228408614.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408614.DCM,
+    sliceclass: 13, slicedescription: error}
+  medical/data_orig/51314913/FNPL_51314913_228408615.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408615.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408616.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408616.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408617.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408617.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408618.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408618.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408619.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408619.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408620.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408620.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408621.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408621.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408622.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408622.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408623.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408623.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408624.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408624.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408625.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408625.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408626.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408626.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408627.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408627.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408628.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408628.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408629.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408629.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408630.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408630.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408631.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408631.DCM,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/51314913/FNPL_51314913_228408632.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408632.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408633.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408633.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408634.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408634.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408635.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408635.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408636.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408636.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408637.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408637.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408638.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408638.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408639.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408639.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408640.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408640.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408641.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408641.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408642.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408642.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408647.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408647.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408652.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408652.DCM,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408658.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408658.DCM,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/51314913/FNPL_51314913_228408663.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408663.DCM,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/51314913/FNPL_51314913_228408668.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408668.DCM,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/51314913/FNPL_51314913_228408673.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408673.DCM,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/51314913/FNPL_51314913_228408678.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408678.DCM,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/51314913/FNPL_51314913_228408683.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408683.DCM,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/51314913/FNPL_51314913_228408688.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408688.DCM,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/51314913/FNPL_51314913_228408693.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408693.DCM,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/51314913/FNPL_51314913_228408698.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408698.DCM,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/51314913/FNPL_51314913_228408703.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408703.DCM,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/51314913/FNPL_51314913_228408709.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408709.DCM,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/51314913/FNPL_51314913_228408714.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408714.DCM,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/51314913/FNPL_51314913_228408719.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408719.DCM,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/51314913/FNPL_51314913_228408724.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408724.DCM,
+    sliceclass: 3, slicedescription: thigh}
+  medical/data_orig/51314913/FNPL_51314913_228408728.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408728.DCM,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/51314913/FNPL_51314913_228408729.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408729.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408732.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408732.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408734.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408734.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408737.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408737.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408739.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408739.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408742.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408742.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408744.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408744.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408747.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408747.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408749.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408749.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408752.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408752.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408754.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408754.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408757.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408757.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408759.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408759.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408762.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408762.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408764.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408764.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408767.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408767.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408769.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408769.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408774.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408774.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408779.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408779.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408784.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408784.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408789.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408789.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408794.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408794.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408799.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408799.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408804.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408804.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228410207.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410207.DCM,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/51314913/FNPL_51314913_228410319.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410319.DCM,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/51314913/FNPL_51314913_228410324.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410324.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228410329.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410329.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228410334.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410334.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228410339.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410339.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228410344.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410344.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228410349.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410349.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228410354.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410354.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228410359.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410359.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228410609.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410609.DCM,
+    sliceclass: 4, slicedescription: pelvis}
   medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0051.dcm: {filepath: medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0051.dcm,
     sliceclass: 8, slicedescription: heart}
   medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0052.dcm: {filepath: medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0052.dcm,
     sliceclass: 8, slicedescription: heart}
   medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0053.dcm: {filepath: medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0053.dcm,
     sliceclass: 8, slicedescription: heart}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0002.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0002.dcm,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0003.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0003.dcm,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0004.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0004.dcm,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0005.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0005.dcm,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0006.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0006.dcm,
+    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0007.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0007.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0008.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0008.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0009.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0009.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0010.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0010.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0011.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0011.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0012.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0012.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0013.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0013.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0014.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0014.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0015.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0015.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0016.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0016.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0017.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0017.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0018.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0018.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0019.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0019.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0020.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0020.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0021.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0021.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0022.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0022.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0023.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0023.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0024.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0024.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0025.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0025.dcm,
+    sliceclass: 7, slicedescription: liver}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0026.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0026.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0027.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0027.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0028.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0028.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0029.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0029.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0030.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0030.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0031.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0031.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0032.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0032.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0033.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0033.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0034.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0034.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0035.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0035.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0036.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0036.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0037.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0037.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0038.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0038.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0039.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0039.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0040.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0040.dcm,
+    sliceclass: 6, slicedescription: kidneys}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0041.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0041.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0042.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0042.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0043.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0043.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0044.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0044.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0045.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0045.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0046.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0046.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0047.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0047.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0048.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0048.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0049.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0049.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0050.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0050.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0051.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0051.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0052.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0052.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0053.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0053.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0054.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0054.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0055.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0055.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0056.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0056.dcm,
+    sliceclass: 5, slicedescription: colon}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0057.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0057.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0058.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0058.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0059.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0059.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0060.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0060.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0061.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0061.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0062.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0062.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0063.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0063.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0064.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0064.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0065.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0065.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0066.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0066.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0067.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0067.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0068.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0068.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0069.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0069.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0070.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0070.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0071.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0071.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0072.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0072.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0073.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0073.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0074.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0074.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0075.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0075.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0076.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0076.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0077.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0077.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0078.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0078.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0079.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0079.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0080.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0080.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0081.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0081.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0082.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0082.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0083.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0083.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0084.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0084.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0085.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0085.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0086.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0086.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0087.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0087.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0088.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0088.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0089.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0089.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0090.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0090.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0091.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0091.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0092.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0092.dcm,
+    sliceclass: 4, slicedescription: pelvis}
+  medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0093.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0093.dcm,
+    sliceclass: 3, slicedescription: thigh}
 info:
   classes: [foot, calf, knee, thigh, pelvis, colon, kidneys, liver, heart, lungs,
-    neck, face, brain]
+    neck, face, brain, error]

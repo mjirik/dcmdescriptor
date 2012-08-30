@@ -69,16 +69,26 @@ def filesindir(dirpath, wildcard="*.*", startpath=None):
 
     if os.path.exists(completedirpath):
         logger.info('completedirpath = '  + completedirpath )
+        #print completedirpath
     else:
         logger.error('Wrong path: '  + completedirpath )
-    print 'copmpletedirpath = ', completedirpath
+        raise Exception('Wrong path : ' + completedirpath )
+
+    #print 'copmpletedirpath = ', completedirpath
+
     for infile in glob.glob( os.path.join(completedirpath, wildcard) ):
         filelist.append(infile)
         #print "current file is: " + infile
+
+
+    if len(filelist) == 0:
+        logger.error('No required files in  path: '  + completedirpath )
+        raise Exception ('No required file in path: ' + completedirpath )
     return filelist
 
 
-def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
+def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, 
+        filelist=None, writedicomdirfile = True ):
     """ Function returns sorted list of dicom files. File paths are organized by
     SeriesUID, StudyUID and FrameUID
 
@@ -112,25 +122,24 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
     for filepath in filelist:
         fullfilepath = os.path.join(startpath, filepath)
 
-        dcmdata=dicom.read_file(fullfilepath)
-        #os.path.split(fullfilepath)
-        
-        
-        files.append([fullfilepath, 
-            #copy.copy(dcmdata.FrameofReferenceUID), 
-            #copy.copy(dcmdata.StudyInstanceUID),
-            #copy.copy(dcmdata.SeriesInstanceUID) 
-            dcmdata.InstanceNumber,
-            dcmdata.SeriesNumber,
-            dcmdata.AcquisitionNumber
-            ])
-        #logger.info('FrameUID : ' + dcmdata.FrameofReferenceUID)
-        #print 'FrameUID : ' + dcmdata.FrameofReferenceUID
-        logger.debug( \
-         'FrameUID : ' + str(dcmdata.InstanceNumber) + \
+        try:
+            dcmdata=dicom.read_file(fullfilepath)
+            files.append([fullfilepath, 
+                #copy.copy(dcmdata.FrameofReferenceUID), 
+                #copy.copy(dcmdata.StudyInstanceUID),
+                #copy.copy(dcmdata.SeriesInstanceUID) 
+                dcmdata.InstanceNumber,
+                dcmdata.SeriesNumber,
+                dcmdata.AcquisitionNumber
+                ])
+            logger.debug( \
+                'FrameUID : ' + str(dcmdata.InstanceNumber) + \
                 ' ' + str(dcmdata.SeriesNumber) + \
                 ' ' + str(dcmdata.AcquisitionNumber)\
                 )
+        except Exception as e:
+            print 'Dicom read problem with file ' + fullfilepath
+            print e
 
         # dcmdata.InstanceNumber
         #logger.info('Modality: ' + dcmdata.Modality)
@@ -142,18 +151,25 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, filelist=None):
         #data = dcmdata.pixel_array
 
     # a řadíme podle frame 
+    files.sort(key=operator.itemgetter(1))
     files.sort(key=operator.itemgetter(2))
     files.sort(key=operator.itemgetter(3))
-    files.sort(key=operator.itemgetter(1))
 
     # TODO dopsat řazení
     #filelist.sort(lambda:files)
     filelist = []
+    dcmdirfile = []
     for onefile in files:
         filelist.append(onefile[0])
+        head, tail = os.path.split(onefile[0])
 
+        dcmdirfile.append({'filename': tail,'InstanceNumber': onefile[1],
+            'SeriesNumber':onefile[2], 'AcquisitionNumber':onefile[3] })
 
-    pdb.set_trace();
+    if (writedicomdirfile):
+        annotation_to_file(dcmdirfile, os.path.join(startpath, dirpath, 'dicomdir.yaml'))
+
+    #pdb.set_trace();
 
     return filelist
 
