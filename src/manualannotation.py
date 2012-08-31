@@ -228,6 +228,8 @@ def manual_annotation_from_dir(datadir, databasedir='', wildcard = '*.dcm',\
     """
 
     import system
+    import os
+    dcmdir = system.createdicomdir(os.path.join(databasedir, datadir))
     filelist = system.dcmsortedlist(datadir, wildcard, databasedir)
     manual_annotation(filelist,databasedir = databasedir, 
             annotationfile=annotationfile,

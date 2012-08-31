@@ -87,6 +87,66 @@ def filesindir(dirpath, wildcard="*.*", startpath=None):
     return filelist
 
 
+def createdicomdir(dirpath):
+    """Function crates list of all files in dicom dir with all IDs
+    """
+    import dicom
+    filelist = filesindir(dirpath)
+    files=[]
+
+    ## doplneni o cestu k datovemu adresari
+    #if startpath != None:
+    #    completedirpath = os.path.join( startpath, dirpath)
+    #else:
+    #    completedirpath = dirpath
+
+    # pruchod soubory
+    for filepath in filelist:
+        fullfilepath = filepath
+        head, teil = os.path.split(fullfilepath)
+
+        try:
+            dcmdata=dicom.read_file(fullfilepath)
+            files.append({'filename' : teil, 
+                #copy.copy(dcmdata.FrameofReferenceUID), 
+                #copy.copy(dcmdata.StudyInstanceUID),
+                #copy.copy(dcmdata.SeriesInstanceUID) 
+                'InstanceNumber' : dcmdata.InstanceNumber,
+                'SeriesNumber' : dcmdata.SeriesNumber,
+                'AcquisitionNumber' : dcmdata.AcquisitionNumber
+                })
+            logger.debug( \
+                'FrameUID : ' + str(dcmdata.InstanceNumber) + \
+                ' ' + str(dcmdata.SeriesNumber) + \
+                ' ' + str(dcmdata.AcquisitionNumber)\
+                )
+        except Exception as e:
+            print 'Dicom read problem with file ' + fullfilepath
+            print e
+
+        # dcmdata.InstanceNumber
+        #logger.info('Modality: ' + dcmdata.Modality)
+        #logger.info('PatientsName: ' + dcmdata.PatientsName)
+        #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
+        #logger.info('SliceThickness: '+ str(dcmdata.SliceThickness))
+        #logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
+        # get data
+        #data = dcmdata.pixel_array
+
+    pdb.set_trace();
+    # a řadíme podle frame 
+
+    files.sort(key=lambda x: x['InstanceNumber'])
+    files.sort(key=lambda x: x['SeriesNumber'])
+    files.sort(key=lambda x: x['AcquisitionNumber'])
+
+    return files
+
+    #files.sort(key=operator.itemgetter(1))
+    #files.sort(key=operator.itemgetter(2))
+    #files.sort(key=operator.itemgetter(3))
+
+
 def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, 
         filelist=None, writedicomdirfile = True ):
     """ Function returns sorted list of dicom files. File paths are organized by
@@ -106,6 +166,9 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None,
     import copy
     if filelist == None:
         if dirpath != None:
+# TODO doplnit prevod dcmdir na filelist
+            dcmdir = system.createdicomdir(os.path.join(startpath,dirpath))
+
             filelist = filesindir(dirpath, wildcard, startpath)
         else:
             logger.error('Wrong input params')
@@ -181,6 +244,7 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None,
 
 if __name__ == "__main__":
 
+    #logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
     ch = logging.StreamHandler()
     logger.addHandler(ch)
