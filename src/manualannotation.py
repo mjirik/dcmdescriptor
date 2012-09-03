@@ -218,7 +218,7 @@ class ButtonsInMatplotlib:
 
 def manual_annotation_from_dir(datadir, databasedir='', wildcard = '*.dcm',\
         annotationfile = 'annotation.yaml', newannotationfile = False, 
-        step=1):
+        step=1, SeriesNumber = None):
     """ User interactive data annotation 
 
     annotationfile: name of filelist
@@ -228,9 +228,9 @@ def manual_annotation_from_dir(datadir, databasedir='', wildcard = '*.dcm',\
     """
 
     import system
-    import os
-    dcmdir = system.createdicomdir(os.path.join(databasedir, datadir))
-    filelist = system.dcmsortedlist(datadir, wildcard, databasedir)
+    #dcmdir = system.createdicomdir(os.path.join(databasedir, datadir))
+    filelist = system.dcmsortedlist(datadir, wildcard, databasedir, 
+            SeriesNumber = SeriesNumber)
     manual_annotation(filelist,databasedir = databasedir, 
             annotationfile=annotationfile,
             newannotationfile=newannotationfile, 
@@ -249,10 +249,8 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
     
     '''
     import dicom
-    from matplotlib.widgets import Button
     import os
     import operator
-    import matplotlib.pyplot as plt
     import system
 
 
@@ -294,6 +292,8 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
             dm = ButtonsInMatplotlib(data)
             logger.info( 'finished ('+str(fileind)+ '/'+ str(len(filelist))\
                     + ') ' + str(dm.retvalue))
+            print 'finished ('+str(fileind)+ '/'+ str(len(filelist))\
+                    + ') ' + str(dm.retvalue)
 
 
 

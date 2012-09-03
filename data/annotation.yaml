@@ -104,8 +104,10 @@ data:
   medical/data_orig/51314913/FNPL_51314913_228408724.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408724.DCM,
     sliceclass: 3, slicedescription: thigh}
   medical/data_orig/51314913/FNPL_51314913_228408728.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408728.DCM,
-    sliceclass: 4, slicedescription: pelvis}
+    sliceclass: 10, slicedescription: neck}
   medical/data_orig/51314913/FNPL_51314913_228408729.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408729.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408731.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408731.DCM,
     sliceclass: 10, slicedescription: neck}
   medical/data_orig/51314913/FNPL_51314913_228408732.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408732.DCM,
     sliceclass: 10, slicedescription: neck}
@@ -114,6 +116,8 @@ data:
   medical/data_orig/51314913/FNPL_51314913_228408737.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408737.DCM,
     sliceclass: 10, slicedescription: neck}
   medical/data_orig/51314913/FNPL_51314913_228408739.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408739.DCM,
+    sliceclass: 10, slicedescription: neck}
+  medical/data_orig/51314913/FNPL_51314913_228408740.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408740.DCM,
     sliceclass: 10, slicedescription: neck}
   medical/data_orig/51314913/FNPL_51314913_228408742.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408742.DCM,
     sliceclass: 10, slicedescription: neck}

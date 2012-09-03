@@ -12,6 +12,7 @@ import os
 import logging
 logger = logging.getLogger(__name__)
 
+
 import pdb; 
 #  pdb.set_trace();
 #import scipy.io
@@ -86,11 +87,29 @@ def filesindir(dirpath, wildcard="*.*", startpath=None):
         raise Exception ('No required file in path: ' + completedirpath )
     return filelist
 
+def getdicomdir(dirpath, writedicomdirfile = True, forcecreate = False):
+    ''' Function check if exists dicomdir file and load it or cerate it
+
+    dcmdir = getdicomdir(dirpath)
+
+    dcmdir: list with filenames, SeriesNumber, InstanceNumber and 
+    AcquisitionNumber
+    '''
+
+    dcmdiryamlpath = os.path.join( dirpath, 'dicomdir.yaml')
+    if os.path.exists(dcmdiryamlpath):
+        dcmdir = annotation_from_file(dcmdiryamlpath)
+    else:
+        dcmdir = createdicomdir(dirpath)
+        if (writedicomdirfile):
+            annotation_to_file(dcmdir, dcmdiryamlpath )
+    return dcmdir
 
 def createdicomdir(dirpath):
     """Function crates list of all files in dicom dir with all IDs
     """
     import dicom
+
     filelist = filesindir(dirpath)
     files=[]
 
@@ -133,12 +152,13 @@ def createdicomdir(dirpath):
         # get data
         #data = dcmdata.pixel_array
 
-    pdb.set_trace();
+    #pdb.set_trace();
     # a řadíme podle frame 
 
     files.sort(key=lambda x: x['InstanceNumber'])
     files.sort(key=lambda x: x['SeriesNumber'])
     files.sort(key=lambda x: x['AcquisitionNumber'])
+
 
     return files
 
@@ -147,8 +167,17 @@ def createdicomdir(dirpath):
     #files.sort(key=operator.itemgetter(3))
 
 
+
+
+def dcmdirstats(dcmdir):
+    import numpy
+    # get series number
+    dcmdirseries = [line['SeriesNumber'] for line in dcmdir ]
+    print numpy.histogram(dcmdirseries)
+
+
 def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None, 
-        filelist=None, writedicomdirfile = True ):
+        filelist=None, writedicomdirfile = True , SeriesNumber = None):
     """ Function returns sorted list of dicom files. File paths are organized by
     SeriesUID, StudyUID and FrameUID
 
@@ -161,79 +190,94 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None,
     dcmsortedlist(filelist)
 
     """
-    import dicom
-    import operator
-    import copy
+    #import dicom
+    #import operator
+    #import copy
     if filelist == None:
         if dirpath != None:
 # TODO doplnit prevod dcmdir na filelist
-            dcmdir = system.createdicomdir(os.path.join(startpath,dirpath))
+            dcmdir = getdicomdir(os.path.join(startpath,dirpath), 
+                    writedicomdirfile)
 
-            filelist = filesindir(dirpath, wildcard, startpath)
+            #filelist = filesindir(dirpath, wildcard, startpath)
         else:
             logger.error('Wrong input params')
+    else:
+        logger.error('Deprecated call with filellist')
 
-    files=[]
+#    files=[]
+#
+#    ## doplneni o cestu k datovemu adresari
+#    #if startpath != None:
+#    #    completedirpath = os.path.join( startpath, dirpath)
+#    #else:
+#    #    completedirpath = dirpath
+#
+#    # pruchod soubory
+#    for filepath in filelist:
+#        fullfilepath = os.path.join(startpath, filepath)
+#
+#        try:
+#            dcmdata=dicom.read_file(fullfilepath)
+#            files.append([fullfilepath, 
+#                #copy.copy(dcmdata.FrameofReferenceUID), 
+#                #copy.copy(dcmdata.StudyInstanceUID),
+#                #copy.copy(dcmdata.SeriesInstanceUID) 
+#                dcmdata.InstanceNumber,
+#                dcmdata.SeriesNumber,
+#                dcmdata.AcquisitionNumber
+#                ])
+#            logger.debug( \
+#                'FrameUID : ' + str(dcmdata.InstanceNumber) + \
+#                ' ' + str(dcmdata.SeriesNumber) + \
+#                ' ' + str(dcmdata.AcquisitionNumber)\
+#                )
+#        except Exception as e:
+#            print 'Dicom read problem with file ' + fullfilepath
+#            print e
+#
+#        # dcmdata.InstanceNumber
+#        #logger.info('Modality: ' + dcmdata.Modality)
+#        #logger.info('PatientsName: ' + dcmdata.PatientsName)
+#        #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
+#        #logger.info('SliceThickness: '+ str(dcmdata.SliceThickness))
+#        #logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
+#        # get data
+#        #data = dcmdata.pixel_array
+#
+#    # a řadíme podle frame 
+#    files.sort(key=operator.itemgetter(1))
+#    files.sort(key=operator.itemgetter(2))
+#    files.sort(key=operator.itemgetter(3))
+#
+#    # TODO dopsat řazení
+#    #filelist.sort(lambda:files)
+#    dcmdirfile = []
 
-    ## doplneni o cestu k datovemu adresari
-    #if startpath != None:
-    #    completedirpath = os.path.join( startpath, dirpath)
-    #else:
-    #    completedirpath = dirpath
+    # sort (again) just for sure
+    dcmdir.sort(key=lambda x: x['InstanceNumber'])
+    dcmdir.sort(key=lambda x: x['SeriesNumber'])
+    dcmdir.sort(key=lambda x: x['AcquisitionNumber'])
 
-    # pruchod soubory
-    for filepath in filelist:
-        fullfilepath = os.path.join(startpath, filepath)
+    # select sublist with SeriesNumber
+    #SeriesNumber = 5
+    if SeriesNumber != None:
+        dcmdir = [line for line in dcmdir if line['SeriesNumber']==SeriesNumber]
 
-        try:
-            dcmdata=dicom.read_file(fullfilepath)
-            files.append([fullfilepath, 
-                #copy.copy(dcmdata.FrameofReferenceUID), 
-                #copy.copy(dcmdata.StudyInstanceUID),
-                #copy.copy(dcmdata.SeriesInstanceUID) 
-                dcmdata.InstanceNumber,
-                dcmdata.SeriesNumber,
-                dcmdata.AcquisitionNumber
-                ])
-            logger.debug( \
-                'FrameUID : ' + str(dcmdata.InstanceNumber) + \
-                ' ' + str(dcmdata.SeriesNumber) + \
-                ' ' + str(dcmdata.AcquisitionNumber)\
-                )
-        except Exception as e:
-            print 'Dicom read problem with file ' + fullfilepath
-            print e
 
-        # dcmdata.InstanceNumber
-        #logger.info('Modality: ' + dcmdata.Modality)
-        #logger.info('PatientsName: ' + dcmdata.PatientsName)
-        #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
-        #logger.info('SliceThickness: '+ str(dcmdata.SliceThickness))
-        #logger.info('PixelSpacing: '+ str(dcmdata.PixelSpacing))
-        # get data
-        #data = dcmdata.pixel_array
-
-    # a řadíme podle frame 
-    files.sort(key=operator.itemgetter(1))
-    files.sort(key=operator.itemgetter(2))
-    files.sort(key=operator.itemgetter(3))
-
-    # TODO dopsat řazení
-    #filelist.sort(lambda:files)
+    print 'nnn', SeriesNumber
     filelist = []
-    dcmdirfile = []
-    for onefile in files:
-        filelist.append(onefile[0])
-        head, tail = os.path.split(onefile[0])
+    pdb.set_trace();
+    for onefile in dcmdir:
+        filelist.append(os.path.join(startpath, dirpath,onefile['filename']))
+        head, tail = os.path.split(onefile['filename'])
+#
+#        dcmdirfile.append({'filename': tail,'InstanceNumber': onefile[1],
+#            'SeriesNumber':onefile[2], 'AcquisitionNumber':onefile[3] })
 
-        dcmdirfile.append({'filename': tail,'InstanceNumber': onefile[1],
-            'SeriesNumber':onefile[2], 'AcquisitionNumber':onefile[3] })
 
-    if (writedicomdirfile):
-        annotation_to_file(dcmdirfile, os.path.join(startpath, dirpath, 'dicomdir.yaml'))
 
-    #pdb.set_trace();
-
+    pdb.set_trace();
     return filelist
 
 

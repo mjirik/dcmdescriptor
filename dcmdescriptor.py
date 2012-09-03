@@ -22,6 +22,7 @@ defaultdatatraindir = 'medical/data_orig/51314913'
 
 # TODO vyrobit nevim co
 if __name__ == "__main__":
+    logger = logging.getLogger()
     logging.basicConfig(format='%(asctime)s %(message)s')
     logger.setLevel(logging.DEBUG)
     ch = logging.StreamHandler()
@@ -44,6 +45,9 @@ if __name__ == "__main__":
     parser.add_argument('-af', '--annotationfile', type=str,\
             default='./data/annotation.yaml',
             help='Create new annotation file')
+    parser.add_argument('-asn', '--annotationseriesnumber',\
+            default=5,
+            help='Select specific serie from dir')
     parser.add_argument('-as', '--annotationstep', type=int,
             default=3,
             help='Annotation step')
@@ -66,5 +70,6 @@ if __name__ == "__main__":
                 annotationfile = args.annotationfile, 
                 newannotationfile = args.newannotationfile,
                 step = args.annotationstep,
-                wildcard = args.annotationwildcard
+                wildcard = args.annotationwildcard,
+                SeriesNumber = args.annotationseriesnumber
                 )
