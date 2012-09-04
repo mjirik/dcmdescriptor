@@ -100,19 +100,21 @@ def classifDialog():
 
 #def buttons_in_matplotlib():
 class ButtonsInMatplotlib:
-    from matplotlib.widgets import Button
-    import matplotlib.pyplot as plt
+    # from matplotlib.widgets import Button
+    # import matplotlib.pyplot as plt
     bodyparts = ['foot', 'calf', 'knee', 'thigh','pelvis','colon', \
-            'kidneys', 'liver', 'heart', 'lungs', 'neck', \
-            'face', 'brain','error']
+            'kidneys', 'liver', 'heart', 'lungs', 'shoulders', 'neck', \
+            'face', 'brain']
     bodypartsind=0
     retvalue=0
     backrequest = 0
     exitrequest = 0
+    skiprequest = 0
     
     def __init__(self, data ):
         from matplotlib.widgets import Button
         import matplotlib.pyplot as plt
+        import copy
         plt.figure()
 
 
@@ -127,12 +129,17 @@ class ButtonsInMatplotlib:
         btback.on_clicked(self.backcallback)
         btexit= Button(plt.axes ([0.02, 0.17, 0.1, 0.1]), 'exit')
         btexit.on_clicked(self.exitcallback)
+        btskip= Button(plt.axes ([0.02, 0.29, 0.1, 0.1]), 'skip')
+        btskip.on_clicked(self.skipcallback)
 
         for i in range(0,len(self.bodyparts)):
             baxes.append(plt.axes([0.85, 0.05+0.06*i, 0.12, 0.05]))
             buttons.append(Button(baxes[i],self.bodyparts[i]))
-            #callbacks.append(self.callback0)
+            #callbacks.append(lambda x:self.stdcallback(x,i))
             #buttons[i].on_clicked(callbacks[i])
+            #buttons[i].on_clicked(lambda x: self.stdcallback(x,i))
+            #buttons[i].on_clicked(lambda x: self.stdcallback0(x,copy.copy(i)))
+            #pdb.set_trace();
 
         buttons[0].on_clicked(self.callback0)
         buttons[1].on_clicked(self.callback1)
@@ -148,22 +155,14 @@ class ButtonsInMatplotlib:
         buttons[11].on_clicked(self.callback11)
         buttons[12].on_clicked(self.callback12)
         buttons[13].on_clicked(self.callback13)
-        #btn0 = Button(baxes[0],self.bodyparts[0])
-        #btn1 = Button(baxes[1],self.bodyparts[1])
-        #btn2 = Button(baxes[2],self.bodyparts[2])
-        #btn3 = Button(baxes[3],self.bodyparts[3])
-        #btn4 = Button(baxes[4],self.bodyparts[4])
-        #btn5 = Button(baxes[5],self.bodyparts[5])
-        #btn6 = Button(baxes[6],self.bodyparts[6])
-        #btn.on_clicked(self.callback0)
-        #for i in range(0,len(self.bodyparts)):
-
-        #bnext.on_clicked(lambda:self.callback(0))
-        #Button(baxes[0],'hoj')
-        #Button(baxes[1],self.bodyparts[1])
 
         plt.show()
 
+    def stdcallback0(self, evnt,  ind):
+        import matplotlib.pyplot as plt
+        plt.close()
+        self.retvalue = self.bodyparts[ind]
+        self.bodypartsind = ind
     def stdcallback(self, ind):
         import matplotlib.pyplot as plt
         plt.close()
@@ -200,6 +199,9 @@ class ButtonsInMatplotlib:
     def callback13(self, evnt ):
         self.stdcallback(13)
 
+    def callbackGeneral(self, evnt ):
+        self.stdcallback(13)
+
 
 
 
@@ -213,6 +215,11 @@ class ButtonsInMatplotlib:
     def exitcallback(self, evnt):
         #self.retvalue = self.bodyparts[ind]
         self.exitrequest = 1
+        import matplotlib.pyplot as plt
+        plt.close()
+    def skipcallback(self, evnt):
+        #self.retvalue = self.bodyparts[ind]
+        self.skiprequest = 1
         import matplotlib.pyplot as plt
         plt.close()
 
@@ -278,8 +285,10 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
         relfilepath = os.path.relpath(filepath, databasedir)
 
 
-
+        #print '-------------------------------------------'
+# TODO je to děsně ukecaný
         dcmdata=dicom.read_file(filepath)
+        #pdb.set_trace();
         #logger.info('Modality: ' + dcmdata.Modality)
         #logger.info('PatientsName: ' + dcmdata.PatientsName)
         #logger.info('BodyPartExamined: '+ dcmdata.BodyPartExamined)
@@ -292,8 +301,8 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
             dm = ButtonsInMatplotlib(data)
             logger.info( 'finished ('+str(fileind)+ '/'+ str(len(filelist))\
                     + ') ' + str(dm.retvalue))
-            print 'finished ('+str(fileind)+ '/'+ str(len(filelist))\
-                    + ') ' + str(dm.retvalue)
+            #print 'finished ('+str(fileind)+ '/'+ str(len(filelist))\
+            #        + ') ' + str(dm.retvalue)
 
 
 
@@ -302,6 +311,8 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
             dm.backcallback = 0
         elif dm.exitrequest == 1:
             fileind = len(filelist) + step
+        elif dm.skiprequest == 1:
+            fileind = fileind + step
         else:
             fileind = fileind + step
             annotation['data'][relfilepath] = {'filepath':relfilepath,

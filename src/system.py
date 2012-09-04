@@ -123,7 +123,6 @@ def createdicomdir(dirpath):
     for filepath in filelist:
         fullfilepath = filepath
         head, teil = os.path.split(fullfilepath)
-
         try:
             dcmdata=dicom.read_file(fullfilepath)
             files.append({'filename' : teil, 
@@ -134,11 +133,11 @@ def createdicomdir(dirpath):
                 'SeriesNumber' : dcmdata.SeriesNumber,
                 'AcquisitionNumber' : dcmdata.AcquisitionNumber
                 })
-            logger.debug( \
-                'FrameUID : ' + str(dcmdata.InstanceNumber) + \
-                ' ' + str(dcmdata.SeriesNumber) + \
-                ' ' + str(dcmdata.AcquisitionNumber)\
-                )
+            #logger.debug( \
+            #    'FrameUID : ' + str(dcmdata.InstanceNumber) + \
+            #    ' ' + str(dcmdata.SeriesNumber) + \
+            #    ' ' + str(dcmdata.AcquisitionNumber)\
+            #    )
         except Exception as e:
             print 'Dicom read problem with file ' + fullfilepath
             print e
@@ -152,7 +151,6 @@ def createdicomdir(dirpath):
         # get data
         #data = dcmdata.pixel_array
 
-    #pdb.set_trace();
     # a řadíme podle frame 
 
     files.sort(key=lambda x: x['InstanceNumber'])
@@ -265,9 +263,10 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None,
         dcmdir = [line for line in dcmdir if line['SeriesNumber']==SeriesNumber]
 
 
-    print 'nnn', SeriesNumber
+    logger.debug('SeriesNumber: ' +str(SeriesNumber))
+
     filelist = []
-    pdb.set_trace();
+    #pdb.set_trace();
     for onefile in dcmdir:
         filelist.append(os.path.join(startpath, dirpath,onefile['filename']))
         head, tail = os.path.split(onefile['filename'])
@@ -277,7 +276,7 @@ def dcmsortedlist(dirpath=None, wildcard='*.*', startpath=None,
 
 
 
-    pdb.set_trace();
+    #pdb.set_trace();
     return filelist
 
 

@@ -1,190 +1,102 @@
 data:
-  medical/data_orig/51314913/FNPL_51314913_228408607.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408607.DCM,
-    sliceclass: 13, slicedescription: error}
-  medical/data_orig/51314913/FNPL_51314913_228408608.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408608.DCM,
-    sliceclass: 13, slicedescription: error}
-  medical/data_orig/51314913/FNPL_51314913_228408609.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408609.DCM,
-    sliceclass: 13, slicedescription: error}
-  medical/data_orig/51314913/FNPL_51314913_228408610.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408610.DCM,
-    sliceclass: 13, slicedescription: error}
-  medical/data_orig/51314913/FNPL_51314913_228408611.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408611.DCM,
-    sliceclass: 13, slicedescription: error}
-  medical/data_orig/51314913/FNPL_51314913_228408612.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408612.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408613.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408613.DCM,
-    sliceclass: 13, slicedescription: error}
-  medical/data_orig/51314913/FNPL_51314913_228408614.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408614.DCM,
-    sliceclass: 13, slicedescription: error}
-  medical/data_orig/51314913/FNPL_51314913_228408615.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408615.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408616.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408616.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408617.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408617.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408618.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408618.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408619.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408619.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408620.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408620.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408621.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408621.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408622.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408622.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408623.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408623.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408624.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408624.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408625.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408625.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408626.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408626.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408627.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408627.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408628.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408628.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408629.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408629.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408630.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408630.DCM,
-    sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408631.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408631.DCM,
-    sliceclass: 7, slicedescription: liver}
-  medical/data_orig/51314913/FNPL_51314913_228408632.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408632.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408633.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408633.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408634.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408634.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408635.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408635.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408636.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408636.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408637.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408637.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408638.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408638.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408639.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408639.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408640.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408640.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408641.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408641.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408642.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408642.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408647.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408647.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408652.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408652.DCM,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/51314913/FNPL_51314913_228408658.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408658.DCM,
-    sliceclass: 7, slicedescription: liver}
-  medical/data_orig/51314913/FNPL_51314913_228408663.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408663.DCM,
-    sliceclass: 7, slicedescription: liver}
-  medical/data_orig/51314913/FNPL_51314913_228408668.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408668.DCM,
-    sliceclass: 7, slicedescription: liver}
-  medical/data_orig/51314913/FNPL_51314913_228408673.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408673.DCM,
-    sliceclass: 6, slicedescription: kidneys}
-  medical/data_orig/51314913/FNPL_51314913_228408678.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408678.DCM,
-    sliceclass: 5, slicedescription: colon}
-  medical/data_orig/51314913/FNPL_51314913_228408683.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408683.DCM,
-    sliceclass: 5, slicedescription: colon}
-  medical/data_orig/51314913/FNPL_51314913_228408688.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408688.DCM,
-    sliceclass: 5, slicedescription: colon}
-  medical/data_orig/51314913/FNPL_51314913_228408693.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408693.DCM,
-    sliceclass: 5, slicedescription: colon}
-  medical/data_orig/51314913/FNPL_51314913_228408698.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408698.DCM,
-    sliceclass: 4, slicedescription: pelvis}
-  medical/data_orig/51314913/FNPL_51314913_228408703.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408703.DCM,
-    sliceclass: 4, slicedescription: pelvis}
-  medical/data_orig/51314913/FNPL_51314913_228408709.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408709.DCM,
-    sliceclass: 4, slicedescription: pelvis}
-  medical/data_orig/51314913/FNPL_51314913_228408714.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408714.DCM,
-    sliceclass: 4, slicedescription: pelvis}
-  medical/data_orig/51314913/FNPL_51314913_228408719.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408719.DCM,
-    sliceclass: 4, slicedescription: pelvis}
-  medical/data_orig/51314913/FNPL_51314913_228408724.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408724.DCM,
-    sliceclass: 3, slicedescription: thigh}
   medical/data_orig/51314913/FNPL_51314913_228408728.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408728.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408729.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408729.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 0, slicedescription: 0}
   medical/data_orig/51314913/FNPL_51314913_228408731.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408731.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408732.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408732.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408734.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408734.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408737.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408737.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408739.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408739.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408740.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408740.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408742.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408742.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408744.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408744.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408747.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408747.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408743.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408743.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408746.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408746.DCM,
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408749.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408749.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408752.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408752.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408754.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408754.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408757.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408757.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408759.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408759.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408762.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408762.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408755.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408755.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408758.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408758.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408761.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408761.DCM,
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408764.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408764.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408767.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408767.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408769.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408769.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408774.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408774.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408770.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408770.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408773.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408773.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408776.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408776.DCM,
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408779.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408779.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408784.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408784.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408789.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408789.DCM,
-    sliceclass: 10, slicedescription: neck}
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408782.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408782.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408785.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408785.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408788.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408788.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408791.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408791.DCM,
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408794.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408794.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228408799.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408799.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408797.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408797.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408800.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408800.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408803.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408803.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408806.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408806.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408809.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408809.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408812.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408812.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408815.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408815.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408818.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408818.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408821.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408821.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408824.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408824.DCM,
+    sliceclass: 10, slicedescription: shoulders}
+  medical/data_orig/51314913/FNPL_51314913_228408827.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408827.DCM,
     sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228408804.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408804.DCM,
+  medical/data_orig/51314913/FNPL_51314913_228408830.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408830.DCM,
     sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228410207.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410207.DCM,
-    sliceclass: 6, slicedescription: kidneys}
-  medical/data_orig/51314913/FNPL_51314913_228410319.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410319.DCM,
-    sliceclass: 4, slicedescription: pelvis}
-  medical/data_orig/51314913/FNPL_51314913_228410324.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410324.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228410329.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410329.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228410334.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410334.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228410339.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410339.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228410344.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410344.DCM,
-    sliceclass: 10, slicedescription: neck}
-  medical/data_orig/51314913/FNPL_51314913_228410349.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410349.DCM,
+  medical/data_orig/51314913/FNPL_51314913_228408833.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408833.DCM,
     sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228410354.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410354.DCM,
+  medical/data_orig/51314913/FNPL_51314913_228408836.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408836.DCM,
     sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228410359.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410359.DCM,
+  medical/data_orig/51314913/FNPL_51314913_228408839.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408839.DCM,
     sliceclass: 9, slicedescription: lungs}
-  medical/data_orig/51314913/FNPL_51314913_228410609.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228410609.DCM,
-    sliceclass: 4, slicedescription: pelvis}
-  medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0051.dcm: {filepath: medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0051.dcm,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0052.dcm: {filepath: medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0052.dcm,
-    sliceclass: 8, slicedescription: heart}
-  medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0053.dcm: {filepath: medical/data_orig/jatra-kma/jatra_06mm_jenjatra/IM-0001-0053.dcm,
-    sliceclass: 8, slicedescription: heart}
+  medical/data_orig/51314913/FNPL_51314913_228408842.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408842.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408845.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408845.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408848.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408848.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408851.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408851.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408854.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408854.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408857.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408857.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408860.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408860.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408863.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408863.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408866.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408866.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408869.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408869.DCM,
+    sliceclass: 9, slicedescription: lungs}
+  medical/data_orig/51314913/FNPL_51314913_228408872.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408872.DCM,
+    sliceclass: 9, slicedescription: lungs}
   medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0001.dcm,
     sliceclass: 8, slicedescription: heart}
   medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0002.dcm: {filepath: medical/data_orig/jatra-kma/jatra_5mm/IM-0001-0002.dcm,
@@ -373,4 +285,4 @@ data:
     sliceclass: 3, slicedescription: thigh}
 info:
   classes: [foot, calf, knee, thigh, pelvis, colon, kidneys, liver, heart, lungs,
-    neck, face, brain, error]
+    shoulders, neck, face, brain]

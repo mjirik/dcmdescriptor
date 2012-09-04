@@ -45,8 +45,8 @@ if __name__ == "__main__":
     parser.add_argument('-af', '--annotationfile', type=str,\
             default='./data/annotation.yaml',
             help='Create new annotation file')
-    parser.add_argument('-asn', '--annotationseriesnumber',\
-            default=5,
+    parser.add_argument('-asn', '--annotationseriesnumber',type=int, \
+            default=None,
             help='Select specific serie from dir')
     parser.add_argument('-as', '--annotationstep', type=int,
             default=3,
