@@ -1,6 +1,6 @@
 data:
   medical/data_orig/51314913/FNPL_51314913_228408728.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408728.DCM,
-    sliceclass: 0, slicedescription: 0}
+    sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408731.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408731.DCM,
     sliceclass: 10, slicedescription: shoulders}
   medical/data_orig/51314913/FNPL_51314913_228408734.DCM: {filepath: medical/data_orig/51314913/FNPL_51314913_228408734.DCM,

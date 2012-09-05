@@ -23,9 +23,17 @@ defaultdatatraindir = 'medical/data_orig/51314913'
 # TODO vyrobit nevim co
 if __name__ == "__main__":
     logger = logging.getLogger()
-    logging.basicConfig(format='%(asctime)s %(message)s')
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.WARNING)
+
     ch = logging.StreamHandler()
+#   output configureation
+    #logging.basicConfig(format='%(asctime)s %(message)s')
+    logging.basicConfig(format='%(message)s')
+
+    formatter = logging.Formatter("%(levelname)-5s [%(module)s:%(funcName)s:%(lineno)d] %(message)s")
+    # add formatter to ch
+    ch.setFormatter(formatter)
+
     logger.addHandler(ch)
 
 
@@ -60,8 +68,13 @@ if __name__ == "__main__":
         default='',help='output directory')
     args = parser.parse_args()
 
+
+    if args.debug:
+        logger.setLevel(logging.DEBUG)
     logger.debug('input params')
     print args
+
+    
 
     if args.manualannotation:
         import manualannotation
