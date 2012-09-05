@@ -35,6 +35,10 @@ import pdb;
 #dec = clf.decision_function([[1]])
 #dec.shape[1]
 
+classif_init_params = 6
+classif_trnd_params = 7
+
+
 def rnd_indexes(ln, nind):
     """ Function return random indexes of list with length ln
     rnd_indexes(10,5)
