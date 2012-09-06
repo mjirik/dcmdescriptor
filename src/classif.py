@@ -3,7 +3,7 @@
 
 
 #
-#from sklearn import svm
+from sklearn import svm
 #X = [[0, 0], [1, 1],[0,4],[0.1, 0.2]]
 #Y = [0, 1, 2 , 0]
 #clf = svm.SVC()
@@ -35,8 +35,33 @@ import pdb;
 #dec = clf.decision_function([[1]])
 #dec.shape[1]
 
-classif_init_params = 6
-classif_trnd_params = 7
+
+
+
+class Clf:
+# pointer to classificator init function
+    ClfInit = None 
+# pointer to flassificatr
+    ClfTrain = None
+    ClfPredict = None
+    ClfFeatVec = None
+
+    def __init__(self):
+        ClfInit = svm.SVC
+        ClfTrain = ClfInit.fit
+        ClfPredict = ClfInit.predict
+        ClfFeatVec = 1
+
+    def save(self):
+        import system
+        var = [self.ClfInit, self.ClfTrain, self.ClfPredict ]
+        system.obj_to_file(var,'Clf.pickle','pickle')
+    def load(self):
+        var = system.obj_from_file('Clf.pickle','pickle')
+        self.ClfInit = var[0]
+        self.ClfTrain = var [1]
+        self.ClfPredict = var[2]
+
 
 
 def rnd_indexes(ln, nind):
@@ -69,33 +94,95 @@ def split_list(restlist, rindxs):
     return selectlist, restlist
 
 
-def traindata(annotation, databasedir):
+def annotation2filelist (annotation, databasedir):
     import dicom
     import os
     from sklearn import svm
     import random
 
-    fvs=[]
     classes=[]
 
+    filelist = []
     for itm in annotation['data'].itervalues():
         #pdb.set_trace();
         filepath = os.path.join(databasedir, itm['filepath'])
 
+        filelist.append(filepath)
+
+        classes.append(itm['sliceclass'])
+    return filelist, classes
+
+def annotationRndSplitF(annotationfile,  part = 0.5, 
+        annotationfile1 = 'ann1.yaml', annotationfile2 = 'ann2.yaml'):
+    import system
+    annotation = system.obj_from_file(annotationfile)
+    ann1, ann2 = annotationRndSplit(annotation,  part)
+    system.obj_to_file(ann1, annotationfile1)
+    system.obj_to_file(ann2, annotationfile2)
+    #pdb.set_trace();
+
+
+def annotationRndSplit(annotation,  part=0.5, rndseed = 0):
+    import copy
+    import random
+    annotation2 = copy.copy(annotation)
+    itms = annotation['data'].items()
+
+    #rindxs = rnd_indexes(len(itms), int(len(itms)*0.75))
+    #list1, list2 = split_list(itms, rindxs)
+
+    random.seed(rndseed)
+    random.shuffle(itms)
+
+    spl = int(len(itms)*part)
+    list1 = itms[0:spl]
+    list2 = itms[spl:]
+
+    annotation2['data'] = {}
+    ann1d= {}
+    for itm in list1:
+        ann1d[itm[0]]=itm[1]
+    
+    annotation['data'] = ann1d
+    
+
+    ann2d= {}
+    for itm in list2:
+        ann2d[itm[0]]=itm[1]
+    
+    annotation2['data'] = ann2d
+
+    #annotation['data'] = list1
+    #annotation['data'] = list1
+    return annotation, annotation2
+
+
+def experiment(ann1file, ann2file):
+    ann1 = system.obj_from_file(ann1file)
+    ann2 = system.obj_from_file(ann2file)
+
+    fl1, cls1 = annotation2filelist(ann1)
+    fl2, cls2 = annotation2filelist(ann2)
+#TODO dokončit experiment
+
+
+
+def filelist2featurevector(filelist,fvparam):
+    fvs=[]
+    for filepath in filelist:
         dcmdata=dicom.read_file(filepath)
-        print 'Modality: ', dcmdata.Modality
-        print 'PatientsName: ' , dcmdata.PatientsName
-        print 'BodyPartExamined: ', dcmdata.BodyPartExamined
-        print 'SliceThickness: ', dcmdata.SliceThickness
-        print 'PixelSpacing: ', dcmdata.PixelSpacing
+        #print 'Modality: ', dcmdata.Modality
+        #print 'PatientsName: ' , dcmdata.PatientsName
+        #print 'BodyPartExamined: ', dcmdata.BodyPartExamined
+        #print 'SliceThickness: ', dcmdata.SliceThickness
+        #print 'PixelSpacing: ', dcmdata.PixelSpacing
         # get data
         data = dcmdata.pixel_array
         #print data
         #fvs[itm['filepath']] = 
         # fv: lbp hist , fvbins possible bins in histogram
-        fv,fvbins = featurevector.fvector(data)
+        fv = featurevector.fvector(data, fvparam)
         fvs.append(fv)
-        classes.append(itm['sliceclass'])
 
         
 
@@ -108,10 +195,21 @@ def traindata(annotation, databasedir):
     #classes_test  = classes[int(len(fvs)*0.75):]
 
 
-    pdb.set_trace();
-    rindxs = rnd_indexes(len(fvs), int(len(fvs)*0.75))
-    fvs_train, fvs_test = split_list(fvs, rindxs)
-    classes_train, classes_test = split_list(classes, rindxs)
+
+
+def traindata(annotation, databasedir):
+    from sklearn import svm
+
+    #pdb.set_trace();
+    filelist, classes =  annotation2filelist(annotation, databasedir)
+    rindxs = rnd_indexes(len(filelist), int(len(filelist)*0.75))
+    filelist_train, filelist_test = split_list(filelist, rindxs)
+    cls_train, cls_test = split_list(classes, rindxs)
+
+
+
+
+    mclf = Clf()
 
     clf = svm.SVC()
     clf.fit(fvs_train, classes_train)  
@@ -134,7 +232,8 @@ def traindata(annotation, databasedir):
 if __name__ == "__main__":
     import system
     print 'ahoj'
-    annotation = system.annotation_from_file('annotation.yaml')
+    annotation = system.obj_from_file('annotation.yaml')
+
     #filelist = filesindir('/home/mjirik/data/jatra-kiv/jatra-kma/jatra_5mm/','*.*')
 
     traindata(annotation,'/home/mjirik/data/')

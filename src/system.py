@@ -21,14 +21,23 @@ import pdb;
 #print mat
 
 
-def annotation_from_file(filename = 'annotation.yaml'):
-    import yaml
+def obj_from_file(filename = 'annotation.yaml', filetype = 'yaml'):
+    ''' Read object from file '''
+# TODO solution for file extensions
     f = open(filename, 'r')
-    yml = yaml.load(f)
+    if filetype == 'yaml':
+        import yaml
+        obj = yaml.load(f)
+    elif filetype == 'pickle':
+        import pickle
+        obj = pickle.load(f)
+    else:
+        logger.error('Unknown filetype')
     f.close()
-    return yml
+    return obj
 
-def annotation_to_file(annotation, filename = 'annotation.yaml'):
+
+def obj_to_file(obj, filename = 'annotation.yaml', filetype = 'yaml'):
     '''Writes annotation in file
     '''
     #import json
@@ -37,9 +46,15 @@ def annotation_to_file(annotation, filename = 'annotation.yaml'):
 
     # write to yaml
 
-    import yaml
     f = open(filename, 'w')
-    yaml.dump(annotation,f)
+    if filetype == 'yaml':
+        import yaml
+        yaml.dump(obj,f)
+    elif filetype == 'pickle':
+        import pickle
+        pickle.dump(obj,f)
+    else:
+        logger.error('Unknown filetype')
     f.close
 
 def filesindir(dirpath, wildcard="*.*", startpath=None):
@@ -98,11 +113,11 @@ def getdicomdir(dirpath, writedicomdirfile = True, forcecreate = False):
 
     dcmdiryamlpath = os.path.join( dirpath, 'dicomdir.yaml')
     if os.path.exists(dcmdiryamlpath):
-        dcmdir = annotation_from_file(dcmdiryamlpath)
+        dcmdir = obj_from_file(dcmdiryamlpath)
     else:
         dcmdir = createdicomdir(dirpath)
         if (writedicomdirfile):
-            annotation_to_file(dcmdir, dcmdiryamlpath )
+            obj_to_file(dcmdir, dcmdiryamlpath )
     return dcmdir
 
 def createdicomdir(dirpath):

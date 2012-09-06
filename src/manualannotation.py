@@ -266,8 +266,9 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
         annotation = {}
         annotation ['data'] = {}
     else:
-        annotation = system.annotation_from_file(annotationfile)
-        print 'přidávám anotaci do souboru'
+        #print 'Pridavam anotaci do souboru'
+        annotation = system.obj_from_file(annotationfile)
+        logger.info ('Adding annotation to file "' + annotationfile + '"')
 
 
     #print 'pocet souboru: ', len(filelist)
@@ -324,7 +325,7 @@ def manual_annotation(filelist, databasedir = None, annotationfile =
     #annotation={}
     #annotation['data'] = annotation_data
     annotation['info'] = {'classes': dm.bodyparts}
-    system.annotation_to_file(annotation, annotationfile)
+    system.obj_to_file(annotation, annotationfile)
 
 
 

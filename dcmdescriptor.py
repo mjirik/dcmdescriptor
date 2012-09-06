@@ -53,14 +53,25 @@ if __name__ == "__main__":
     parser.add_argument('-af', '--annotationfile', type=str,\
             default='./data/annotation.yaml',
             help='Create new annotation file')
+    parser.add_argument('-af1', '--annotationfile1', type=str,\
+            default='./data/ann1.yaml',
+            help='Create new annotation file')
+    parser.add_argument('-af2', '--annotationfile2', type=str,\
+            default='./data/ann2.yaml',
+            help='Create new annotation file')
     parser.add_argument('-asn', '--annotationseriesnumber',type=int, \
             default=None,
             help='Select specific serie from dir')
+    parser.add_argument('-ars', '--annotationrandomsplit',type=float, \
+            default=None,
+            help='Splits annotation into two random annotations')
     parser.add_argument('-as', '--annotationstep', type=int,
             default=3,
             help='Annotation step')
     parser.add_argument('-aw', '--annotationwildcard', type=str,
             default='*.dcm',
+            help='Annotation step')
+    parser.add_argument('-e', '--experiment', action='store_true',
             help='Annotation step')
     parser.add_argument('-2', '--split', action='store_true',
         help='split image and use only left half')
@@ -86,3 +97,9 @@ if __name__ == "__main__":
                 wildcard = args.annotationwildcard,
                 SeriesNumber = args.annotationseriesnumber
                 )
+
+    if args.annotationrandomsplit != None:
+        import classif
+        classif.annotationRndSplitF(args.annotationfile, part=args.annotationrandomsplit)
+    if args.experiment:
+        classif.experiment(args.annotationfile1, annotationfile2)

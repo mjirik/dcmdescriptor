@@ -36,7 +36,7 @@ def fvector(data, method = 'lbp'):
         
         imlbp = lbpsimple.lbp2oneslice(data, lbpkern)
 
-        fv = lbpsimple.features(imlbp)
+        fv,bins = lbpsimple.features(imlbp)
 
         #pdb.set_trace();
     else:
