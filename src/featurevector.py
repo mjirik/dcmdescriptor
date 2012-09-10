@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #debug
+import lbpsimple
 import pdb; 
 #  pdb.set_trace();
 
@@ -22,14 +23,11 @@ import pdb;
 
 
 
-def fvector(data, method = 'lbp'):
+def fvector(data, method ):
     """ Method for building feature vector """
 
     fv = 0
-    if method == 'lbp':
-        from scipy import misc
-        import matplotlib.pyplot as plt
-        import lbpsimple
+    if method['type'] == 'lbp':
         
 
         lbpkern = lbpsimple.generateKernel2()
@@ -40,7 +38,6 @@ def fvector(data, method = 'lbp'):
 
         #pdb.set_trace();
     else:
-        print 'Unknow method for feature vetor: ', method
-        return -1
+        raise Exception('Unknow method for feature vector: %s' %(method))
 
     return fv

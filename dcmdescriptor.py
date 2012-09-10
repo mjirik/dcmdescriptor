@@ -102,4 +102,5 @@ if __name__ == "__main__":
         import classif
         classif.annotationRndSplitF(args.annotationfile, part=args.annotationrandomsplit)
     if args.experiment:
-        classif.experiment(args.annotationfile1, annotationfile2)
+        import classif
+        classif.experiment(args.annotationfile1, args.annotationfile2, args.datadir)

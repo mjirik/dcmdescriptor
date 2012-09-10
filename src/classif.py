@@ -3,6 +3,8 @@
 
 
 #
+import os
+import dicom
 from sklearn import svm
 #X = [[0, 0], [1, 1],[0,4],[0.1, 0.2]]
 #Y = [0, 1, 2 , 0]
@@ -47,10 +49,13 @@ class Clf:
     ClfFeatVec = None
 
     def __init__(self):
-        ClfInit = svm.SVC
-        ClfTrain = ClfInit.fit
-        ClfPredict = ClfInit.predict
-        ClfFeatVec = 1
+        print 'Clf init'
+        self.ClfInit = svm.SVC()
+        self.ClfTrain = self.ClfInit.fit
+        self.ClfPredict = self.ClfInit.predict
+        self.ClfFeatVec = 1
+
+    #def train(featurevector, classes)
 
     def save(self):
         import system
@@ -95,10 +100,6 @@ def split_list(restlist, rindxs):
 
 
 def annotation2filelist (annotation, databasedir):
-    import dicom
-    import os
-    from sklearn import svm
-    import random
 
     classes=[]
 
@@ -157,12 +158,33 @@ def annotationRndSplit(annotation,  part=0.5, rndseed = 0):
     return annotation, annotation2
 
 
-def experiment(ann1file, ann2file):
+def experiment(ann1file, ann2file, databasedir, features={'type':'lbp','p1': [1, 2] }, classif=['svm']):
+    import system
+
+    #clf = Clf()
+    #clf.ClfInit()
+    #clf.ClfTrain([[1],[5],[9],[4]],[0,1,2,1])
+    #prediction2 = clf.ClfPredict([2,4,8])
+
+
     ann1 = system.obj_from_file(ann1file)
     ann2 = system.obj_from_file(ann2file)
 
-    fl1, cls1 = annotation2filelist(ann1)
-    fl2, cls2 = annotation2filelist(ann2)
+    fl1, cls1 = annotation2filelist(ann1,databasedir)
+    fl2, cls2 = annotation2filelist(ann2, databasedir)
+
+    fv1 = filelist2featurevector(fl1, features)
+    pdb.set_trace();
+    clf = Clf()
+    #clf.ClfInit()
+    clf.ClfTrain(fv1, cls1)
+
+    fv2 = filelist2featurevector(fl2, features)
+    prediction2 = clf.ClfPredict(fv2)
+
+
+    print sum(prediction2 != cls2) , ' / ', len(prediction2)
+
 #TODO dokončit experiment
 
 
@@ -183,6 +205,8 @@ def filelist2featurevector(filelist,fvparam):
         # fv: lbp hist , fvbins possible bins in histogram
         fv = featurevector.fvector(data, fvparam)
         fvs.append(fv)
+
+    return fvs
 
         
 
