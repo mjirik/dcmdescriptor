@@ -70,9 +70,11 @@ if __name__ == "__main__":
             help='Annotation step')
     parser.add_argument('-aw', '--annotationwildcard', type=str,
             default='*.dcm',
-            help='Annotation step')
+            help='Annotation wildcard')
     parser.add_argument('-e', '--experiment', action='store_true',
-            help='Annotation step')
+            help='Run experiment')
+    parser.add_argument('-ef', '--experimentfeatures',
+            help='Experiment fetures params')
     parser.add_argument('-2', '--split', action='store_true',
         help='split image and use only left half')
     parser.add_argument('--outdir', type=str,
@@ -103,4 +105,5 @@ if __name__ == "__main__":
         classif.annotationRndSplitF(args.annotationfile, part=args.annotationrandomsplit)
     if args.experiment:
         import classif
-        classif.experiment(args.annotationfile1, args.annotationfile2, args.datadir)
+        classif.experiment(args.annotationfile1, args.annotationfile2, args.datadir, 
+                features={'type':args.experimentfeatures})

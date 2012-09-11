@@ -3,7 +3,7 @@
 
 #debug
 import lbpsimple
-import pdb; 
+import numpy
 #  pdb.set_trace();
 
 #from sklearn import svm
@@ -37,6 +37,13 @@ def fvector(data, method ):
         fv,bins = lbpsimple.features(imlbp)
 
         #pdb.set_trace();
+    elif method['type'] == 'hist':
+        
+        fv, bins = numpy.histogram( data,range(-200,2000,20))
+        fv = fv[10:15]
+        #fv, bins = numpy.histogram( data)
+        pass
+
     else:
         raise Exception('Unknow method for feature vector: %s' %(method))
 

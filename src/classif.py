@@ -160,6 +160,8 @@ def annotationRndSplit(annotation,  part=0.5, rndseed = 0):
 
 def experiment(ann1file, ann2file, databasedir, features={'type':'lbp','p1': [1, 2] }, classif=['svm']):
     import system
+    import numpy
+    import itertools
 
     #clf = Clf()
     #clf.ClfInit()
@@ -174,16 +176,47 @@ def experiment(ann1file, ann2file, databasedir, features={'type':'lbp','p1': [1,
     fl2, cls2 = annotation2filelist(ann2, databasedir)
 
     fv1 = filelist2featurevector(fl1, features)
-    pdb.set_trace();
+    #pdb.set_trace();
     clf = Clf()
     #clf.ClfInit()
     clf.ClfTrain(fv1, cls1)
 
+
+
+
+
+
+
     fv2 = filelist2featurevector(fl2, features)
     prediction2 = clf.ClfPredict(fv2)
 
+    nTrue= sum(prediction2 == cls2)
+    nn = len(prediction2)
 
-    print sum(prediction2 != cls2) , ' / ', len(prediction2)
+    print  ' %d / %d  =  %f ' %(nTrue,nn, nTrue/float(nn))
+
+    pdb.set_trace();
+    Ytrue = cls2
+    Ypred = prediction2
+    #confM = numpy.bincount(n * (Ytrue - 1) + (Ypred -1), minlength=n*n).reshape(n, n)
+    classes = list(set(Ytrue))
+    n = len(classes)
+    error = numpy.array([zip(Ytrue,Ypred).count(x) for x in itertools.product(classes,repeat=2)]).reshape(n,n)
+    print error
+#-------------------------
+
+    from sklearn import svm
+    #X = [[0, 0], [1, 1],[0,4],[0.1, 0.2]]
+    #Y = [0, 1, 2 , 0]
+    X = fv1
+    Y = cls1
+
+    pdb.set_trace();
+    clf = svm.SVC()
+    clf.fit(X, Y)  
+    print clf.predict(fv2)
+#----------------------
+
 
 #TODO dokončit experiment
 
