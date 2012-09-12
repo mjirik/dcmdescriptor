@@ -49,7 +49,6 @@ class Clf:
     ClfFeatVec = None
 
     def __init__(self):
-        print 'Clf init'
         self.ClfInit = svm.SVC()
         self.ClfTrain = self.ClfInit.fit
         self.ClfPredict = self.ClfInit.predict
